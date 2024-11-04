@@ -1,18 +1,41 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
-    <title>Document</title>
-
+    <title>Juego de Historias Interactivas</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
-
 <body>
-    <h1>Elige tu aventura ⚔🪔🕯🏹⚒🪕</h1>
-    <img src="./Fantasía.webp" alt="">
-    <script src="./script.js"></script>
-</body>
+    <div id="creacion-personaje">
+        <h2>Crea tu personaje</h2>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" placeholder="Nombre del personaje" required>
+        
+        <label for="raza">Raza:</label>
+        <select id="raza">
+            <option value="Humano">Humano</option>
+            <option value="Elfo">Elfo</option>
+            <option value="Enano">Enano</option>
+        </select>
+        
+        <label for="clase">Clase:</label>
+        <select id="clase">
+            <option value="Guerrero">Guerrero</option>
+            <option value="Mago">Mago</option>
+            <option value="Arquero">Arquero</option>
+        </select>
+        
+        <button onclick="crearPersonaje()">Iniciar Aventura</button>
+    </div>
 
+    <div id="juego" style="display: none;">
+        <h2 id="historia-texto"></h2>
+        <div id="opciones"></div>
+        <button onclick="reiniciarJuego()">Reiniciar Juego</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
 </html>

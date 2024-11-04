@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "texto": "Hola, ${personaje.nombre}. Te encuentras en una encrucijada. ¿Qué deseas hacer?",
+        "opciones": [
+            { "texto": "Tomar el camino de la izquierda", "siguiente": 2 },
+            { "texto": "Tomar el camino de la derecha", "siguiente": 3 }
+        ]
+    },
+    {
+        "id": 2,
+        "texto": "Llegas a una cueva oscura donde encuentras un misterioso artefacto.",
+        "opciones": [
+            { "texto": "Investigar el artefacto", "siguiente": 4 },
+            { "texto": "Salir de la cueva", "siguiente": 5 }
+        ]
+    },
+    {
+        "id": 3,
+        "texto": "Sigues el camino y te encuentras con un anciano sabio.",
+        "opciones": [
+            { "texto": "Hablar con el anciano", "siguiente": 4 },
+            { "texto": "Ignorarlo y seguir caminando", "siguiente": 5 }
+        ]
+    },
+    {
+        "id": 4,
+        "texto": "Después de tu decisión, sientes que tu aventura está solo comenzando...",
+        "opciones": [
+            { "texto": "Continuar explorando", "siguiente": 1 }
+        ]
+    },
+    {
+        "id": 5,
+        "texto": "Tu aventura ha llegado a su fin. Gracias por jugar.",
+        "opciones": []
+    }
+]
