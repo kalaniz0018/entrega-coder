@@ -7,41 +7,103 @@ class Personaje {
     }
 }
 
-// Variables globales y simulador
-let personaje = null; // ahora personaje es un objeto de la clase Personaje
+// Variables globales
+let personaje = null;
 let historias = [];
 
 // Elementos del DOM
-const crearPersonajeBtn = document.getElementById("crear-personaje-btn");
-const nombreInput = document.getElementById("nombre");
-const razaSelect = document.getElementById("raza");
-const claseSelect = document.getElementById("clase");
+const jugarBtn = document.getElementById("jugar-btn");
 const textoHistoria = document.getElementById("texto-historia");
 const opcionesContainer = document.getElementById("opciones");
 
-// Cargar historias desde JSON local (simulado)
+// Verifica si el botón se encontró en el DOM
+if (jugarBtn) {
+    console.log("Botón 'Jugar' encontrado en el DOM.");
+} else {
+    console.error("Botón 'Jugar' no encontrado. Revisa el HTML.");
+}
+
+// Cargar historias desde JSON
 fetch("historias.json")
-    .then((response) => response.json())
-    .then((data) => {
+    .then(response => response.json())
+    .then(data => {
         historias = data;
+        console.log("Historias cargadas exitosamente:", historias); // Confirmar que el JSON se cargó
     })
-    .catch((error) => console.error("Error al cargar historias:", error));
+    .catch(error => console.error("Error al cargar historias:", error));
 
-// Crear y guardar personaje en localStorage
-crearPersonajeBtn.addEventListener("click", () => {
-    // Crear una instancia de Personaje
-    personaje = new Personaje(
-        nombreInput.value || "Aventurero",
-        razaSelect.value,
-        claseSelect.value
-    );
+// Al hacer clic en "Jugar"
+jugarBtn.addEventListener("click", () => {
+    Swal.fire({
+        title: 'Crea tu personaje',
+        html:
+            '<input type="text" id="nombre" class="swal2-input" placeholder="Nombre del personaje">' +
+            '<select id="raza" class="swal2-input">' +
+            '<option value="Humano">Humano</option>' +
+            '<option value="Elfo">Elfo</option>' +
+            '<option value="Enano">Enano</option>' +
+            '</select>' +
+            '<select id="clase" class="swal2-input">' +
+            '<option value="Guerrero">Guerrero</option>' +
+            '<option value="Mago">Mago</option>' +
+            '<option value="Arquero">Arquero</option>' +
+            '</select>',
+        focusConfirm: false,
+        preConfirm: () => {
+            const nombre = Swal.getPopup().querySelector('#nombre').value || "Aventurero";
+            const raza = Swal.getPopup().querySelector('#raza').value;
+            const clase = Swal.getPopup().querySelector('#clase').value;
 
-    // Guardar personaje en localStorage
-    localStorage.setItem("personaje", JSON.stringify(personaje));
+            return { nombre, raza, clase };
+        }
+    }).then((result) => {
+        if (result.isConfirmed) {
+            // Crear personaje y guardarlo en localStorage
+            personaje = new Personaje(result.value.nombre, result.value.raza, result.value.clase);
+            localStorage.setItem("personaje", JSON.stringify(personaje));
 
-    // Iniciar historia desde el primer nodo
-    mostrarHistoria(1);
+            // Ocultar el botón de jugar y comenzar la historia
+            jugarBtn.style.display = "none";
+            mostrarHistoria(1); // Mostrar el primer nodo de la historia
+        }
+    });
 });
+
+
+// Elemento para el botón de volver a jugar
+const volverAJugarBtn = document.createElement("button");
+volverAJugarBtn.id = "volver-a-jugar-btn";
+volverAJugarBtn.innerText = "Volver a Jugar";
+volverAJugarBtn.style.display = "none"; // Inicialmente oculto
+
+// Agregar el botón al contenedor de texto de la historia
+const historiaContainer = document.getElementById("historia-container");
+historiaContainer.appendChild(volverAJugarBtn);
+
+// Mostrar el botón de volver a jugar
+function mostrarBotonVolverAJugar() {
+    volverAJugarBtn.style.display = "block";
+}
+
+// Al hacer clic en "Volver a Jugar"
+volverAJugarBtn.addEventListener("click", () => {
+    // Limpiar el localStorage
+    localStorage.removeItem("personaje");
+
+    // Reiniciar la interfaz
+    jugarBtn.style.display = "block"; // Mostrar el botón de jugar
+    textoHistoria.style.display = "none"; // Ocultar el texto de la historia
+    opcionesContainer.innerHTML = ""; // Limpiar las opciones
+    volverAJugarBtn.style.display = "none"; // Ocultar el botón de volver a jugar
+});
+
+// Llama a esta función al final de la historia cuando se complete
+function finDeLaHistoria() {
+    mostrarBotonVolverAJugar(); // Mostrar el botón para volver a jugar
+}
+
+
+
 
 // Mostrar historia y opciones
 function mostrarHistoria(id) {
@@ -49,14 +111,13 @@ function mostrarHistoria(id) {
 
     if (historia) {
         let textoConDatos = historia.texto
-        .replaceAll("${personaje.nombre}", personaje.nombre)
-        .replaceAll("${personaje.raza}", personaje.raza)
-        .replaceAll("${personaje.clase}", personaje.clase);
+            .replaceAll("${personaje.nombre}", personaje.nombre)
+            .replaceAll("${personaje.raza}", personaje.raza)
+            .replaceAll("${personaje.clase}", personaje.clase);
 
-    // Mostrar el texto de la historia
-    textoHistoria.style.display = "block";
-    textoHistoria.innerText = textoConDatos;
-
+        // Mostrar el texto de la historia
+        textoHistoria.style.display = "block";
+        textoHistoria.innerText = textoConDatos;
 
         // Renderizar opciones
         opcionesContainer.innerHTML = "";
@@ -67,15 +128,24 @@ function mostrarHistoria(id) {
             botonOpcion.addEventListener("click", () => mostrarHistoria(opcion.siguiente));
             opcionesContainer.appendChild(botonOpcion);
         });
+
+        // Si no hay más opciones, finalizar la historia
+        if (historia.opciones.length === 0) {
+            finDeLaHistoria(); // Llama a la función para finalizar la historia
+        }
     }
 }
+
 
 // Recuperar personaje del localStorage al cargar la página
 function cargarPersonaje() {
     const personajeGuardado = JSON.parse(localStorage.getItem("personaje"));
     if (personajeGuardado) {
         personaje = new Personaje(personajeGuardado.nombre, personajeGuardado.raza, personajeGuardado.clase);
-        mostrarHistoria(1); // Iniciar desde el primer paso de la historia
+
+        // Ocultar el botón de jugar y comenzar la historia
+        jugarBtn.style.display = "none";
+        mostrarHistoria(1); // Comienza desde la introducción
     }
 }
 

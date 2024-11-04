@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "texto": "Hola, ${personaje.nombre}, valiente ${personaje.raza} ${personaje.clase}. Te encuentras en una encrucijada. ¿Qué deseas hacer?",
+        "texto": "¡Bienvenido/a, ${personaje.nombre}! Como un valiente ${personaje.raza} ${personaje.clase}, te aventuras en un mundo lleno de misterio y peligros. Te encuentras en una encrucijada en el bosque, y el aire está cargado de magia antigua. A tu izquierda, un sendero oscuro se adentra en el bosque profundo. A la derecha, ves un camino iluminado que parece llevar a una aldea. ¿Qué deseas hacer?",
         "opciones": [
             { "texto": "Tomar el camino de la izquierda", "siguiente": 2 },
             { "texto": "Tomar el camino de la derecha", "siguiente": 3 }

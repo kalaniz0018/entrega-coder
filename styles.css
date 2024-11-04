@@ -50,3 +50,22 @@ button:hover {
     margin-top: 20px;
     font-size: 1.2em;
 }
+
+
+#volver-a-jugar-btn {
+    display: block;            /* Hacer que el botón sea un bloque */
+    margin: 20px auto;       /* Centrando el botón horizontalmente */
+    padding: 10px 20px;      /* Espaciado interno para un tamaño adecuado */
+    font-size: 16px;         /* Tamaño de fuente */
+    background-color: #007bff; /* Color de fondo */
+    color: white;            /* Color del texto */
+    border: none;            /* Sin borde */
+    border-radius: 5px;     /* Bordes redondeados */
+    cursor: pointer;         /* Cambiar el cursor al pasar sobre el botón */
+    text-align: center;      /* Alinear el texto al centro */
+}
+
+/* Añadir un efecto al pasar el mouse sobre el botón */
+#volver-a-jugar-btn:hover {
+    background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+}

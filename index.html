@@ -5,35 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Historia Interactiva</title>
     <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script> <!-- SweetAlert CDN -->
 </head>
 <body>
     <div id="historia-container">
-        <h1>Crear tu Personaje</h1>
-        <div id="crear-personaje">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" placeholder="Nombre del personaje" required>
-            
-            <label for="raza">Raza:</label>
-            <select id="raza">
-                <option value="Humano">Humano</option>
-                <option value="Elfo">Elfo</option>
-                <option value="Enano">Enano</option>
-            </select>
-            
-            <label for="clase">Clase:</label>
-            <select id="clase">
-                <option value="Guerrero">Guerrero</option>
-                <option value="Mago">Mago</option>
-                <option value="Arquero">Arquero</option>
-            </select>
-            
-            <button id="crear-personaje-btn">Crear Personaje</button>
-        </div>
+        <h1>Historia Interactiva</h1>
         
-        <div id="texto-historia" style="display: none;"></div>
+        <!-- Botón para iniciar el juego -->
+        <button id="jugar-btn">Jugar</button>
+        
+        <!-- Contenedor para la historia y opciones -->
+        <div id="texto-historia"></div>
         <div id="opciones"></div>
     </div>
 
+    <!-- Cargar el archivo JavaScript -->
     <script src="script.js"></script>
 </body>
 </html>
