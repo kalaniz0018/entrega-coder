@@ -1,3 +1,5 @@
+// Limpiar el localStorage al cargar la página
+localStorage.clear();
 // Clase para el personaje
 class Personaje {
     constructor(nombre, raza, clase) {
