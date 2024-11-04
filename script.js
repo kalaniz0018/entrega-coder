@@ -7,69 +7,77 @@ class Personaje {
     }
 }
 
-// Crear el personaje y almacenarlo en localStorage
-function crearPersonaje() {
-    const nombre = document.getElementById("nombre").value;
-    const raza = document.getElementById("raza").value;
-    const clase = document.getElementById("clase").value;
+// Variables globales y simulador
+let personaje = null; // ahora personaje es un objeto de la clase Personaje
+let historias = [];
 
-    if (!nombre) {
-        Swal.fire("Error", "Por favor, ingresa un nombre para tu personaje.", "error");
-        return;
-    }
+// Elementos del DOM
+const crearPersonajeBtn = document.getElementById("crear-personaje-btn");
+const nombreInput = document.getElementById("nombre");
+const razaSelect = document.getElementById("raza");
+const claseSelect = document.getElementById("clase");
+const textoHistoria = document.getElementById("texto-historia");
+const opcionesContainer = document.getElementById("opciones");
 
-    const personaje = new Personaje(nombre, raza, clase);
+// Cargar historias desde JSON local (simulado)
+fetch("historias.json")
+    .then((response) => response.json())
+    .then((data) => {
+        historias = data;
+    })
+    .catch((error) => console.error("Error al cargar historias:", error));
+
+// Crear y guardar personaje en localStorage
+crearPersonajeBtn.addEventListener("click", () => {
+    // Crear una instancia de Personaje
+    personaje = new Personaje(
+        nombreInput.value || "Aventurero",
+        razaSelect.value,
+        claseSelect.value
+    );
+
+    // Guardar personaje en localStorage
     localStorage.setItem("personaje", JSON.stringify(personaje));
 
-    Swal.fire({
-        title: "Personaje Creado",
-        text: `Bienvenido ${nombre}, un ${raza} ${clase}. ¡Tu aventura comienza ahora!`,
-        icon: "success",
-        confirmButtonText: "Comenzar"
-    }).then(() => {
-        document.getElementById("creacion-personaje").style.display = "none";
-        document.getElementById("juego").style.display = "block";
-        cargarHistorias();
-    });
-}
+    // Iniciar historia desde el primer nodo
+    mostrarHistoria(1);
+});
 
-// Cargar historias desde JSON usando fetch
-async function cargarHistorias() {
-    try {
-        const response = await fetch("historias.json");
-        const historias = await response.json();
-        localStorage.setItem("historias", JSON.stringify(historias));
-        mostrarEscena(1);  // Comenzar en la primera escena
-    } catch (error) {
-        console.error("Error al cargar las historias:", error);
+// Mostrar historia y opciones
+function mostrarHistoria(id) {
+    const historia = historias.find((item) => item.id === id);
+
+    if (historia) {
+        let textoConDatos = historia.texto
+        .replaceAll("${personaje.nombre}", personaje.nombre)
+        .replaceAll("${personaje.raza}", personaje.raza)
+        .replaceAll("${personaje.clase}", personaje.clase);
+
+    // Mostrar el texto de la historia
+    textoHistoria.style.display = "block";
+    textoHistoria.innerText = textoConDatos;
+
+
+        // Renderizar opciones
+        opcionesContainer.innerHTML = "";
+        historia.opciones.forEach((opcion) => {
+            const botonOpcion = document.createElement("button");
+            botonOpcion.classList.add("opcion");
+            botonOpcion.textContent = opcion.texto;
+            botonOpcion.addEventListener("click", () => mostrarHistoria(opcion.siguiente));
+            opcionesContainer.appendChild(botonOpcion);
+        });
     }
 }
 
-// Mostrar una escena basada en su ID
-function mostrarEscena(escenaId) {
-    const historias = JSON.parse(localStorage.getItem("historias"));
-    const escena = historias.find(h => h.id === escenaId);
-    const personaje = JSON.parse(localStorage.getItem("personaje"));
-
-    document.getElementById("historia-texto").innerText = escena.texto.replace("${personaje.nombre}", personaje.nombre);
-
-    const opcionesContenedor = document.getElementById("opciones");
-    opcionesContenedor.innerHTML = "";
-
-    escena.opciones.forEach(opcion => {
-        const boton = document.createElement("button");
-        boton.innerText = opcion.texto;
-        boton.onclick = () => {
-            localStorage.setItem("progreso", opcion.siguiente);
-            mostrarEscena(opcion.siguiente);
-        };
-        opcionesContenedor.appendChild(boton);
-    });
+// Recuperar personaje del localStorage al cargar la página
+function cargarPersonaje() {
+    const personajeGuardado = JSON.parse(localStorage.getItem("personaje"));
+    if (personajeGuardado) {
+        personaje = new Personaje(personajeGuardado.nombre, personajeGuardado.raza, personajeGuardado.clase);
+        mostrarHistoria(1); // Iniciar desde el primer paso de la historia
+    }
 }
 
-// Reiniciar juego
-function reiniciarJuego() {
-    localStorage.clear();
-    document.getElementById("creacion-personaje").style.display = "block";
-    document.getElementById("juego").style.display = "none";
-}
+// Ejecutar cargarPersonaje para restablecer la sesión de usuario
+cargarPersonaje();

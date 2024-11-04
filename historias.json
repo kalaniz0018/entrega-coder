@@ -1,7 +1,7 @@
 [
     {
         "id": 1,
-        "texto": "Hola, ${personaje.nombre}. Te encuentras en una encrucijada. ¿Qué deseas hacer?",
+        "texto": "Hola, ${personaje.nombre}, valiente ${personaje.raza} ${personaje.clase}. Te encuentras en una encrucijada. ¿Qué deseas hacer?",
         "opciones": [
             { "texto": "Tomar el camino de la izquierda", "siguiente": 2 },
             { "texto": "Tomar el camino de la derecha", "siguiente": 3 }

@@ -1,115 +1,52 @@
-/* Estilos Generales */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Georgia', serif;
+    font-family: 'Arial', sans-serif;
 }
 
 body {
-    background-color: #2c3e50;
+    background-color: #282c34;
     color: #ecf0f1;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 20px;
 }
 
-/* Contenedor principal de la historia */
 #historia-container {
     max-width: 600px;
-    width: 100%;
     background: #34495e;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     padding: 20px;
-}
-
-/* Título del juego */
-#historia-container h1 {
-    font-size: 2em;
-    margin-bottom: 20px;
+    border-radius: 8px;
     text-align: center;
-    color: #e74c3c;
 }
 
-/* Texto de la historia */
-#texto-historia {
-    font-size: 1.2em;
-    line-height: 1.6;
+h1 {
     margin-bottom: 20px;
-    color: #ecf0f1;
+    color: #e67e22;
 }
 
-/* Botones de opciones */
-.opcion {
-    display: block;
-    background: #e67e22;
-    color: white;
-    font-size: 1em;
+input, select, button {
+    width: 100%;
     margin: 10px 0;
-    padding: 10px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background 0.3s ease;
+    padding: 8px;
+    font-size: 16px;
 }
 
-.opcion:hover {
-    background: #d35400;
-}
-
-.opcion:focus {
-    outline: 2px solid #f39c12;
-}
-
-/* Estilo del formulario de creación de personaje */
-#crear-personaje {
-    margin-bottom: 20px;
-}
-
-label {
-    display: block;
-    margin-top: 10px;
-    font-size: 1.1em;
-    color: #ecf0f1;
-}
-
-input[type="text"], select {
-    width: 100%;
-    padding: 10px;
-    margin-top: 5px;
-    border: 2px solid #34495e;
-    border-radius: 5px;
-    background: #ecf0f1;
-    color: #2c3e50;
-    font-size: 1em;
-}
-
-/* Botón de enviar */
-#crear-personaje button {
-    display: block;
-    width: 100%;
-    padding: 10px;
-    margin-top: 20px;
-    background: #27ae60;
+button {
+    background-color: #e67e22;
     color: white;
-    font-size: 1.1em;
     border: none;
-    border-radius: 5px;
     cursor: pointer;
-    transition: background 0.3s ease;
+    transition: background 0.3s;
 }
 
-#crear-personaje button:hover {
-    background: #2ecc71;
+button:hover {
+    background-color: #d35400;
 }
 
-/* Notificación al final */
-#final-mensaje {
-    font-size: 1.2em;
-    text-align: center;
+#texto-historia {
     margin-top: 20px;
-    color: #ecf0f1;
+    font-size: 1.2em;
 }
