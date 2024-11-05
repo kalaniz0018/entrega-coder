@@ -72,6 +72,77 @@ jugarBtn.addEventListener("click", () => {
 });
 
 
+
+
+
+
+// Cargar enemigos desde un JSON y almacenar en una variable global
+let enemigos = [];
+fetch("enemigos.json")
+    .then(response => response.json())
+    .then(data => {
+        enemigos = data;
+        console.log("Enemigos cargados exitosamente:", enemigos);
+    })
+    .catch(error => console.error("Error al cargar enemigos:", error));
+
+// Función para iniciar un combate
+function iniciarCombate(idEnemigo) {
+    const enemigoData = enemigos.find(enemigo => enemigo.id === idEnemigo);
+    if (!enemigoData) {
+        console.error("Enemigo no encontrado en el JSON.");
+        return;
+    }
+
+    const enemigo = new Enemigo(enemigoData.nombre, enemigoData.salud, enemigoData.ataque, enemigoData.defensa);
+
+    // Ejecutar el combate por turnos
+    ejecutarTurno(enemigo);
+}
+
+// Función para un turno de combate
+function ejecutarTurno(enemigo) {
+    const tiradaJugador = lanzarDado();
+    const tiradaEnemigo = lanzarDado();
+
+    let mensajeJugador = `Has sacado un ${tiradaJugador}.`;
+    let mensajeEnemigo = `${enemigo.nombre} ha sacado un ${tiradaEnemigo}.`;
+
+    let danoJugador = tiradaJugador > enemigo.defensa ? tiradaJugador : 0;
+    enemigo.salud -= danoJugador;
+    mensajeJugador += danoJugador > 0 ? ` Golpeas al ${enemigo.nombre} y causas ${danoJugador} de daño.` : ` Fallaste en tu ataque.`;
+
+    if (enemigo.salud > 0) {
+        let danoEnemigo = tiradaEnemigo > personaje.defensa ? tiradaEnemigo : 0;
+        personaje.salud -= danoEnemigo;
+        mensajeEnemigo += danoEnemigo > 0 ? ` ${enemigo.nombre} te ataca y causa ${danoEnemigo} de daño.` : ` El ataque del enemigo falla.`;
+    }
+
+    console.log(mensajeJugador);
+    console.log(mensajeEnemigo);
+
+    if (enemigo.salud <= 0) {
+        console.log(`¡Has derrotado al ${enemigo.nombre}!`);
+        continuarHistoriaDespuesDelCombate();
+    } else if (personaje.salud <= 0) {
+        console.log("¡Has sido derrotado!");
+    } else {
+        ejecutarTurno(enemigo);
+    }
+}
+
+function lanzarDado() {
+    return Math.floor(Math.random() * 12) + 1;
+}
+
+// Continuar la historia después del combate
+function continuarHistoriaDespuesDelCombate() {
+    const siguienteHistoria = 2; // Define el próximo nodo o historia después del combate
+    mostrarHistoria(siguienteHistoria);
+}
+
+
+
 // Elemento para el botón de volver a jugar
 const volverAJugarBtn = document.createElement("button");
 volverAJugarBtn.id = "volver-a-jugar-btn";

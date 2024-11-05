@@ -1,0 +1,16 @@
+[
+    {
+        "id": 1,
+        "nombre": "Goblin",
+        "salud": 20,
+        "ataque": 5,
+        "defensa": 3
+    },
+    {
+        "id": 2,
+        "nombre": "Lobo salvaje",
+        "salud": 25,
+        "ataque": 6,
+        "defensa": 4
+    }
+]
