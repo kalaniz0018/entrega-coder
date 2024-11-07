@@ -15,6 +15,9 @@ class Personaje {
         } else if (valor === "malo") {
             this.karma -= 1;
         }
+
+            // Guardar el personaje actualizado en localStorage
+            localStorage.setItem("personaje", JSON.stringify(this));
         
     }
 
@@ -177,6 +180,8 @@ function cargarPersonaje() {
     const personajeGuardado = JSON.parse(localStorage.getItem("personaje"));
     if (personajeGuardado) {
         personaje = new Personaje(personajeGuardado.nombre, personajeGuardado.raza, personajeGuardado.clase);
+        personaje.karma = personajeGuardado.karma; // Restaurar karma desde el localStorage
+
 
         // Ocultar el botón de jugar y comenzar la historia
         jugarBtn.style.display = "none";
