@@ -155,6 +155,13 @@ function mostrarHistoria(id) {
         textoHistoria.style.display = "block";
         textoHistoria.innerText = textoConDatos;
 
+              // Verificar si hay imagen y mostrarla
+              if (historia.imagen) {
+                const imagenElement = document.createElement("img");
+                imagenElement.src = historia.imagen;
+                textoHistoria.appendChild(imagenElement); // Añadir la imagen al contenedor de texto
+            }
+
         // Renderizar opciones
         opcionesContainer.innerHTML = "";
         historia.opciones.forEach((opcion) => {

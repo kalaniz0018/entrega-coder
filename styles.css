@@ -69,3 +69,12 @@ button:hover {
 #volver-a-jugar-btn:hover {
     background-color: #0056b3; /* Color más oscuro al pasar el mouse */
 }
+
+
+#historia-container img {
+    width: 100%;    /* Escala la imagen al 100% del ancho de su contenedor */
+    height: auto;   /* Mantiene la relación de aspecto */
+    max-width: 500px; /* Puedes ajustar esto a un tamaño máximo, si lo deseas */
+    display: block;  /* Asegura que la imagen se muestre correctamente */
+    margin: 0 auto;  /* Centra la imagen */
+}

@@ -2,6 +2,7 @@
     {
         "id": 1,
         "texto": "¡Bienvenido/a, ${personaje.nombre}! Como un valiente ${personaje.raza} ${personaje.clase}, te aventuras en un mundo lleno de misterio y peligros. Te encuentras en una encrucijada en el bosque, y el aire está cargado de magia antigua. A tu izquierda, un sendero oscuro se adentra en el bosque profundo, donde los árboles parecen susurrar secretos. A la derecha, ves un camino iluminado que parece llevar a una aldea tranquila, aunque extraña. ¿Qué deseas hacer?",
+        "imagen":"./imgs/id1.webp" ,
         "opciones": [
             { "texto": "Tomar el camino de la izquierda", "siguiente": 2 },
             { "texto": "Tomar el camino de la derecha", "siguiente": 3 }
@@ -10,6 +11,7 @@
     {
         "id": 2,
         "texto": "Te adentras en el sendero oscuro y sientes que el aire se vuelve más frío. Después de unos minutos, llegas a una cueva sombría. Dentro, encuentras un misterioso artefacto brillante en el suelo, rodeado de sombras que parecen moverse. Te sientes observado. ¿Qué haces?",
+        "imagen":"./imgs/id2.webp" ,
         "opciones": [
             { "texto": "Investigar el artefacto", "siguiente": 4 },
             { "texto": "Salir de la cueva rápidamente", "siguiente": 5 }
@@ -18,6 +20,7 @@
     {
         "id": 3,
         "texto": "Sigues el camino iluminado y te encuentras con un anciano sabio que está sentado en un banco. Su mirada es profunda y enigmática. Te advierte sobre las fuerzas oscuras que acechan en el bosque y que el camino que tomes puede tener consecuencias inimaginables. ¿Qué deseas hacer?",
+        "imagen":"./imgs/id3.webp",
         "opciones": [
             { "texto": "Hablar con el anciano y escuchar su advertencia", "siguiente": 6, "karma": "bueno" },
             { "texto": "Ignorarlo y seguir caminando", "siguiente": 18 }
@@ -26,6 +29,7 @@
     {
         "id": 4,
         "texto": "Te acercas al artefacto y sientes una oleada de energía recorriendo tu cuerpo. Al tocarlo, vislumbras fragmentos de una historia oscura: un antiguo mal que fue encerrado y ahora amenaza con liberarse. De repente, el artefacto se activa y un susurro ecoa en tu mente, invitándote a liberar al ser atrapado. ¿Decides hacerlo?",
+        "imagen":"./imgs/id4.webp",
         "opciones": [
             { "texto": "Liberar al ser atrapado", "siguiente": 7 },
             { "texto": "Dejar el artefacto y salir de la cueva", "siguiente": 5 }
@@ -34,11 +38,13 @@
     {
         "id": 5,
         "texto": "Decides dejar la cueva, sintiendo que algo oscuro acechaba en las sombras. Aunque has evitado el peligro inmediato, el bosque sigue lleno de misterios por descubrir. Regresas a la encrucijada, donde puedes tomar un nuevo camino. Sin embargo, al recordar las advertencias del anciano y lo que has visto, decides que es mejor regresar a la aldea. Al llegar, el aire fresco y la tranquilidad te dan la bienvenida, pero sabes que el bosque siempre estará ahí, lleno de secretos por desvelar. Tu aventura ha terminado, pero los ecos del bosque seguirán resonando en tu mente.",
+        "imagen":"./imgs/id5.webp",
         "opciones": []
     },
     {
         "id": 6,
         "texto": "Decides escuchar al anciano. Te cuenta que el bosque está lleno de entidades que no deberían ser liberadas. Te advierte sobre un lugar donde los muertos vagan y que si sigues adelante sin la preparación adecuada, podrías perderte para siempre. Te ofrece un amuleto que podría protegerte. ¿Lo aceptas?",
+        "imagen":"./imgs/id6.avif",
         "opciones": [
             { "texto": "Aceptar el amuleto", "siguiente": 8, "karma": "bueno" },
             { "texto": "Rechazar el amuleto y seguir tu camino", "siguiente": 5 }
@@ -47,6 +53,7 @@
     {
         "id": 7,
         "texto": "Liberas al ser atrapado. Un torrente de energía oscura inunda la cueva y el ser, una sombra de un antiguo enemigo, emerge ante ti. Su risa resuena en la oscuridad. Te ofrece un pacto que puede otorgarte poder, pero a un precio terrible. ¿Aceptas el pacto?",
+        "imagen":"./imgs/id7.jpg",
         "opciones": [
             { "texto": "Aceptar el pacto", "siguiente": 9 },
             { "texto": "Rechazar el pacto y luchar contra la sombra", "siguiente": 10 }
