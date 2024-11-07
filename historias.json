@@ -33,7 +33,7 @@
     },
     {
         "id": 5,
-        "texto": "Decides dejar la cueva, sintiendo que algo oscuro acechaba en las sombras. Aunque has evitado el peligro inmediato, el bosque sigue lleno de misterios por descubrir. Regresas a la encrucijada, donde puedes tomar un nuevo camino. Sin embargo, al recordar las advertencias del anciano y lo que has visto, decides que es mejor regresar a la aldea. Al llegar, el aire fresco y la tranquilidad te dan la bienvenida, pero sabes que el bosque siempre estará ahí, lleno de secretos por desvelar. Tu aventura ha terminado, pero los ecos del bosque seguirán resonando en tu mente. Fin.",
+        "texto": "Decides dejar la cueva, sintiendo que algo oscuro acechaba en las sombras. Aunque has evitado el peligro inmediato, el bosque sigue lleno de misterios por descubrir. Regresas a la encrucijada, donde puedes tomar un nuevo camino. Sin embargo, al recordar las advertencias del anciano y lo que has visto, decides que es mejor regresar a la aldea. Al llegar, el aire fresco y la tranquilidad te dan la bienvenida, pero sabes que el bosque siempre estará ahí, lleno de secretos por desvelar. Tu aventura ha terminado, pero los ecos del bosque seguirán resonando en tu mente.",
         "opciones": []
     },
     {
@@ -62,12 +62,12 @@
     },
     {
         "id": 9,
-        "texto": "El poder del pacto fluye a través de ti, pero sientes cómo tu humanidad se desmorona. Ahora, como un sirviente de la oscuridad, debes cumplir con las órdenes del ser liberado. Sin embargo, con el poder viene la locura. Te conviertes en un cazador de almas, atrapando a otros en el bosque. Aunque has ganado poder, has perdido tu libertad y tu esencia. La sombra siempre estará acechando. Fin.",
+        "texto": "El poder del pacto fluye a través de ti, pero sientes cómo tu humanidad se desmorona. Ahora, como un sirviente de la oscuridad, debes cumplir con las órdenes del ser liberado. Sin embargo, con el poder viene la locura. Te conviertes en un cazador de almas, atrapando a otros en el bosque. Aunque has ganado poder, has perdido tu libertad y tu esencia. La sombra siempre estará acechando.",
         "opciones": []
     },
     {
         "id": 10,
-        "texto": "Decides luchar contra la sombra. A pesar de que el ser es formidable, usas toda tu fuerza y el amuleto para enfrentarte a él. Después de una intensa batalla, logras desterrarlo de vuelta a la oscuridad. Sintiéndote victorioso, decides proteger el bosque de futuros peligros. Como nuevo guardián del bosque, tu aventura apenas comienza. Fin.",
+        "texto": "Decides luchar contra la sombra. A pesar de que el ser es formidable, usas toda tu fuerza y el amuleto para enfrentarte a él. Después de una intensa batalla, logras desterrarlo de vuelta a la oscuridad. Sintiéndote victorioso, decides proteger el bosque de futuros peligros. Como nuevo guardián del bosque, tu aventura apenas comienza.",
         "opciones": []
     },
     {
@@ -88,12 +88,12 @@
     },
     {
         "id": 13,
-        "texto": "Enfrentas al espectro con valentía. La lucha es feroz, pero tu determinación brilla. Usas el amuleto para sellar el espectro en un ciclo de luz y sombra. Has ganado una batalla, pero la guerra en el bosque apenas comienza. Te das cuenta de que siempre habrá nuevos desafíos y secretos en la oscuridad del bosque. Te conviertes en un héroe del bosque, listo para enfrentar lo que venga. Fin.",
+        "texto": "Enfrentas al espectro con valentía. La lucha es feroz, pero tu determinación brilla. Usas el amuleto para sellar el espectro en un ciclo de luz y sombra. Has ganado una batalla, pero la guerra en el bosque apenas comienza. Te das cuenta de que siempre habrá nuevos desafíos y secretos en la oscuridad del bosque. Te conviertes en un héroe del bosque, listo para enfrentar lo que venga.",
         "opciones": []
     },
     {
         "id": 14,
-        "texto": "Intentas escapar del espectro, pero se mueve más rápido. Al girar una esquina, caes en un abismo de sombras y quedas atrapado para siempre. Aunque tu viaje termina aquí, tu historia será recordada por aquellos que se aventuran a entrar en el bosque. Fin.",
+        "texto": "Intentas escapar del espectro, pero se mueve más rápido. Al girar una esquina, caes en un abismo de sombras y quedas atrapado para siempre. Aunque tu viaje termina aquí, tu historia será recordada por aquellos que se aventuran a entrar en el bosque.",
         "opciones": []
     },
     {
@@ -114,7 +114,7 @@
     },
     {
         "id": 17,
-        "texto": "Usas el artefacto y sientes cómo una luz te envuelve. De repente, te encuentras de nuevo en un lugar seguro fuera del bosque, habiendo superado la prueba y aprendido valiosas lecciones. Ahora, con un nuevo sentido de propósito, decides qué camino tomar en tu vida. Tu aventura ha sido un viaje de crecimiento y descubrimiento. Fin.",
+        "texto": "Usas el artefacto y sientes cómo una luz te envuelve. De repente, te encuentras de nuevo en un lugar seguro fuera del bosque, habiendo superado la prueba y aprendido valiosas lecciones. Ahora, con un nuevo sentido de propósito, decides qué camino tomar en tu vida. Tu aventura ha sido un viaje de crecimiento y descubrimiento.",
         "opciones": []
     },
       {
@@ -143,12 +143,12 @@
     },
     {
         "id": 21,
-        "texto": "Superas la prueba de bondad al demostrar compasión y empatía, lo cual permite que el guardián te conceda un deseo. Decides pedir la restauración de la familia de la elfa. En un destello de luz, su familia reaparece junto a la fuente, y ella, entre lágrimas, te agradece. Has ganado un aliado leal en el bosque. Fin.",
+        "texto": "Superas la prueba de bondad al demostrar compasión y empatía, lo cual permite que el guardián te conceda un deseo. Decides pedir la restauración de la familia de la elfa. En un destello de luz, su familia reaparece junto a la fuente, y ella, entre lágrimas, te agradece. Has ganado un aliado leal en el bosque.",
         "opciones": []
     },
     {
         "id": 22,
-        "texto": "Intentas convencer al guardián de que los deje pasar sin la prueba. Sin embargo, el guardián no confía en tus palabras y te rechaza. La elfa, decepcionada, decide ir sola. Continuas tu viaje, pero una sombra oscura parece seguirte, consecuencia de haber fallado en ayudar de corazón. Fin.",
+        "texto": "Intentas convencer al guardián de que los deje pasar sin la prueba. Sin embargo, el guardián no confía en tus palabras y te rechaza. La elfa, decepcionada, decide ir sola. Continuas tu viaje, pero una sombra oscura parece seguirte, consecuencia de haber fallado en ayudar de corazón.",
         "opciones": []
     },
     {
@@ -161,12 +161,12 @@
     },
     {
         "id": 24,
-        "texto": "Ayudas al mercader y lo llevas a salvo a la aldea, donde sus familiares te ofrecen una recompensa en monedas de oro. El mercader promete que te ayudará en el futuro si necesitas algo en el bosque. Te despides, sabiendo que ahora cuentas con un aliado más. Fin.",
+        "texto": "Ayudas al mercader y lo llevas a salvo a la aldea, donde sus familiares te ofrecen una recompensa en monedas de oro. El mercader promete que te ayudará en el futuro si necesitas algo en el bosque. Te despides, sabiendo que ahora cuentas con un aliado más.",
         "opciones": []
     },
     {
         "id": 25,
-        "texto": "Robas algunos bienes del mercader y sigues tu camino. Sin embargo, pronto sientes un peso en tu consciencia. Más tarde en tu viaje, descubres que esos bienes estaban malditos, y una sombra te sigue, recordándote tus acciones. Fin.",
+        "texto": "Robas algunos bienes del mercader y sigues tu camino. Sin embargo, pronto sientes un peso en tu consciencia. Más tarde en tu viaje, descubres que esos bienes estaban malditos, y una sombra te sigue, recordándote tus acciones.",
         "opciones": []
     },
     {
@@ -179,7 +179,7 @@
     },
     {
         "id": 27,
-        "texto": "Decides acompañar al niño, ayudándolo a superar sus miedos y llegar a salvo a su aldea. Los aldeanos te agradecen y te ofrecen un mapa secreto del bosque como recompensa. Con este mapa, tu camino será más seguro y estarás mejor preparado para futuros desafíos. Fin.",
+        "texto": "Decides acompañar al niño, ayudándolo a superar sus miedos y llegar a salvo a su aldea. Los aldeanos te agradecen y te ofrecen un mapa secreto del bosque como recompensa. Con este mapa, tu camino será más seguro y estarás mejor preparado para futuros desafíos.",
         "opciones": []
     }
 ]

@@ -16,9 +16,9 @@ class Personaje {
             this.karma -= 1;
         }
 
-            // Guardar el personaje actualizado en localStorage
-            localStorage.setItem("personaje", JSON.stringify(this));
-        
+        // Guardar el personaje actualizado en localStorage
+        localStorage.setItem("personaje", JSON.stringify(this));
+
     }
 
     obtenerFinal() {
@@ -129,11 +129,12 @@ volverAJugarBtn.addEventListener("click", () => {
 // Llama a esta función al final de la historia cuando se complete
 function finDeLaHistoria() {
     const final = personaje.obtenerFinal();
-    Swal.fire({
-        title: "Fin de la Aventura",
-        text: final,
-        icon: "info"
-    });
+    // Mostrar el final en el contenedor de texto (sin usar Swal)
+    const finalContainer = document.createElement("div");
+    finalContainer.classList.add("final-container");
+    finalContainer.innerHTML = `<p><strong>Fin de la Aventura</strong></p><p>${final}</p>`;
+    // Agregar el final debajo del texto de la historia
+    textoHistoria.appendChild(finalContainer);
     mostrarBotonVolverAJugar(); // Mostrar el botón para volver a jugar
 }
 
