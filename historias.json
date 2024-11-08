@@ -33,7 +33,7 @@
   },
   {
     "id": 4,
-    "texto": "Te acercas al artefacto y sientes una oleada de energía recorriendo tu cuerpo. Al tocarlo, vislumbras fragmentos de una historia oscura: un antiguo mal que fue encerrado y ahora amenaza con liberarse. De repente, el artefacto se activa y un susurro ecoa en tu mente, invitándote a liberar al ser atrapado. ¿Decides hacerlo?",
+    "texto": "Te acercas al artefacto y sientes una oleada de energía recorriendo tu cuerpo. Al tocarlo, vislumbras fragmentos de una historia oscura: un antiguo mal que fue encerrado y ahora amenaza con liberarse. De repente, el artefacto se activa y un susurro hace eco en tu mente, invitándote a liberar al ser atrapado. ¿Decides hacerlo?",
     "imagen": "./imgs/id4.webp",
     "opciones": [
       { "texto": "Liberar al ser atrapado", "siguiente": 7, "karma": "bueno" },
