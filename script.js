@@ -55,8 +55,18 @@ fetch("historias.json")
     })
     .catch(error => console.error("Error al cargar historias:", error));
 
-// Al hacer clic en "Jugar"
 jugarBtn.addEventListener("click", () => {
+    const titulo = document.querySelector("h1"); 
+    const imagen = document.querySelector("img"); 
+
+    if (titulo) {
+        titulo.style.display = "none"; 
+    }
+
+    if (imagen) {
+        imagen.style.display = "none"; 
+    }
+
     Swal.fire({
         title: 'Crea tu personaje',
         html:
