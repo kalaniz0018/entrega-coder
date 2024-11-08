@@ -15,10 +15,8 @@ class Personaje {
         } else if (valor === "malo") {
             this.karma -= 1;
         }
-
         // Guardar el personaje actualizado en localStorage
         localStorage.setItem("personaje", JSON.stringify(this));
-
     }
 
     obtenerFinal() {
@@ -30,7 +28,6 @@ class Personaje {
             return "Final Malo: Te has ganado enemigos y eres exiliado";
         }
     }
-
 }
 
 // Variables globales

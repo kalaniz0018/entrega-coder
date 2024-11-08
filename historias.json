@@ -1,192 +1,251 @@
 [
-    {
-        "id": 1,
-        "texto": "¡Bienvenido/a, ${personaje.nombre}! Como un valiente ${personaje.raza} ${personaje.clase}, te aventuras en un mundo lleno de misterio y peligros. Te encuentras en una encrucijada en el bosque, y el aire está cargado de magia antigua. A tu izquierda, un sendero oscuro se adentra en el bosque profundo, donde los árboles parecen susurrar secretos. A la derecha, ves un camino iluminado que parece llevar a una aldea tranquila, aunque extraña. ¿Qué deseas hacer?",
-        "imagen":"./imgs/id1.webp" ,
-        "opciones": [
-            { "texto": "Tomar el camino de la izquierda", "siguiente": 2 },
-            { "texto": "Tomar el camino de la derecha", "siguiente": 3 }
-        ]
-    },
-    {
-        "id": 2,
-        "texto": "Te adentras en el sendero oscuro y sientes que el aire se vuelve más frío. Después de unos minutos, llegas a una cueva sombría. Dentro, encuentras un misterioso artefacto brillante en el suelo, rodeado de sombras que parecen moverse. Te sientes observado. ¿Qué haces?",
-        "imagen":"./imgs/id2.webp" ,
-        "opciones": [
-            { "texto": "Investigar el artefacto", "siguiente": 4 },
-            { "texto": "Salir de la cueva rápidamente", "siguiente": 5 }
-        ]
-    },
-    {
-        "id": 3,
-        "texto": "Sigues el camino iluminado y te encuentras con un anciano sabio que está sentado en un banco. Su mirada es profunda y enigmática. Te advierte sobre las fuerzas oscuras que acechan en el bosque y que el camino que tomes puede tener consecuencias inimaginables. ¿Qué deseas hacer?",
-        "imagen":"./imgs/id3.webp",
-        "opciones": [
-            { "texto": "Hablar con el anciano y escuchar su advertencia", "siguiente": 6, "karma": "bueno" },
-            { "texto": "Ignorarlo y seguir caminando", "siguiente": 18 }
-        ]
-    },
-    {
-        "id": 4,
-        "texto": "Te acercas al artefacto y sientes una oleada de energía recorriendo tu cuerpo. Al tocarlo, vislumbras fragmentos de una historia oscura: un antiguo mal que fue encerrado y ahora amenaza con liberarse. De repente, el artefacto se activa y un susurro ecoa en tu mente, invitándote a liberar al ser atrapado. ¿Decides hacerlo?",
-        "imagen":"./imgs/id4.webp",
-        "opciones": [
-            { "texto": "Liberar al ser atrapado", "siguiente": 7 },
-            { "texto": "Dejar el artefacto y salir de la cueva", "siguiente": 5 }
-        ]
-    },
-    {
-        "id": 5,
-        "texto": "Decides dejar la cueva, sintiendo que algo oscuro acechaba en las sombras. Aunque has evitado el peligro inmediato, el bosque sigue lleno de misterios por descubrir. Regresas a la encrucijada, donde puedes tomar un nuevo camino. Sin embargo, al recordar las advertencias del anciano y lo que has visto, decides que es mejor regresar a la aldea. Al llegar, el aire fresco y la tranquilidad te dan la bienvenida, pero sabes que el bosque siempre estará ahí, lleno de secretos por desvelar. Tu aventura ha terminado, pero los ecos del bosque seguirán resonando en tu mente.",
-        "imagen":"./imgs/id5.webp",
-        "opciones": []
-    },
-    {
-        "id": 6,
-        "texto": "Decides escuchar al anciano. Te cuenta que el bosque está lleno de entidades que no deberían ser liberadas. Te advierte sobre un lugar donde los muertos vagan y que si sigues adelante sin la preparación adecuada, podrías perderte para siempre. Te ofrece un amuleto que podría protegerte. ¿Lo aceptas?",
-        "imagen":"./imgs/id6.avif",
-        "opciones": [
-            { "texto": "Aceptar el amuleto", "siguiente": 8, "karma": "bueno" },
-            { "texto": "Rechazar el amuleto y seguir tu camino", "siguiente": 5 }
-        ]
-    },
-    {
-        "id": 7,
-        "texto": "Liberas al ser atrapado. Un torrente de energía oscura inunda la cueva y el ser, una sombra de un antiguo enemigo, emerge ante ti. Su risa resuena en la oscuridad. Te ofrece un pacto que puede otorgarte poder, pero a un precio terrible. ¿Aceptas el pacto?",
-        "imagen":"./imgs/id7.jpg",
-        "opciones": [
-            { "texto": "Aceptar el pacto", "siguiente": 9 },
-            { "texto": "Rechazar el pacto y luchar contra la sombra", "siguiente": 10 }
-        ]
-    },
-    {
-        "id": 8,
-        "texto": "Con el amuleto en tu poder, te sientes más seguro. El anciano te despide con una advertencia: 'No todos los caminos conducen a la salvación'. Agradeces al anciano y continúas tu camino. Pronto te enfrentas a un cruce nuevamente. Uno de los caminos lleva a una niebla densa, el otro a un puente que parece inestable. ¿Cuál eliges?",
-        "opciones": [
-            { "texto": "Tomar el camino de la niebla", "siguiente": 11 },
-            { "texto": "Cruzar el puente inestable", "siguiente": 12 }
-        ]
-    },
-    {
-        "id": 9,
-        "texto": "El poder del pacto fluye a través de ti, pero sientes cómo tu humanidad se desmorona. Ahora, como un sirviente de la oscuridad, debes cumplir con las órdenes del ser liberado. Sin embargo, con el poder viene la locura. Te conviertes en un cazador de almas, atrapando a otros en el bosque. Aunque has ganado poder, has perdido tu libertad y tu esencia. La sombra siempre estará acechando.",
-        "opciones": []
-    },
-    {
-        "id": 10,
-        "texto": "Decides luchar contra la sombra. A pesar de que el ser es formidable, usas toda tu fuerza y el amuleto para enfrentarte a él. Después de una intensa batalla, logras desterrarlo de vuelta a la oscuridad. Sintiéndote victorioso, decides proteger el bosque de futuros peligros. Como nuevo guardián del bosque, tu aventura apenas comienza.",
-        "opciones": []
-    },
-    {
-        "id": 11,
-        "texto": "El camino de la niebla es frío y siniestro. A medida que avanzas, una figura se materializa frente a ti: un espectro que parece buscar venganza. Con su mano fría, te toca y sientes cómo tus recuerdos se desvanecen. ¿Qué harás?",
-        "opciones": [
-            { "texto": "Enfrentar al espectro", "siguiente": 13 },
-            { "texto": "Intentar escapar", "siguiente": 14 }
-        ]
-    },
-    {
-        "id": 12,
-        "texto": "Al cruzar el puente inestable, este comienza a romperse. En un último esfuerzo, te lanzas al otro lado justo a tiempo. Aterrizas en un claro donde una antigua estatua de piedra te observa. ¿Qué decides hacer?",
-        "opciones": [
-            { "texto": "Examinar la estatua", "siguiente": 15, "karma": "bueno" },
-            { "texto": "Ignorarla y seguir adelante", "siguiente": 5 }
-        ]
-    },
-    {
-        "id": 13,
-        "texto": "Enfrentas al espectro con valentía. La lucha es feroz, pero tu determinación brilla. Usas el amuleto para sellar el espectro en un ciclo de luz y sombra. Has ganado una batalla, pero la guerra en el bosque apenas comienza. Te das cuenta de que siempre habrá nuevos desafíos y secretos en la oscuridad del bosque. Te conviertes en un héroe del bosque, listo para enfrentar lo que venga.",
-        "opciones": []
-    },
-    {
-        "id": 14,
-        "texto": "Intentas escapar del espectro, pero se mueve más rápido. Al girar una esquina, caes en un abismo de sombras y quedas atrapado para siempre. Aunque tu viaje termina aquí, tu historia será recordada por aquellos que se aventuran a entrar en el bosque.",
-        "opciones": []
-    },
-    {
-        "id": 15,
-        "texto": "La estatua parece cobrar vida por un instante, revelando un antiguo secreto sobre el bosque. Te dice que hay una salida, pero solo si demuestras tu valía enfrentando una prueba. ¿Estás listo para el desafío?",
-        "opciones": [
-            { "texto": "Aceptar el desafío", "siguiente": 16 },
-            { "texto": "Rechazar el desafío y huir", "siguiente": 5 }
-        ]
-    },
-    {
-        "id": 16,
-        "texto": "Te enfrentas a la prueba. Respondes a tres acertijos que ponen a prueba tu sabiduría y valentía. Después de superar cada uno, la estatua te concede un regalo: un artefacto que puede abrir una puerta a un lugar seguro. Ahora, ¿qué harás?",
-        "opciones": [
-            { "texto": "Usar el artefacto para salir del bosque", "siguiente": 17 },
-            { "texto": "Quedarte un poco más y explorar", "siguiente": 23 }
-        ]
-    },
-    {
-        "id": 17,
-        "texto": "Usas el artefacto y sientes cómo una luz te envuelve. De repente, te encuentras de nuevo en un lugar seguro fuera del bosque, habiendo superado la prueba y aprendido valiosas lecciones. Ahora, con un nuevo sentido de propósito, decides qué camino tomar en tu vida. Tu aventura ha sido un viaje de crecimiento y descubrimiento.",
-        "opciones": []
-    },
+  {
+    "id": 1,
+    "texto": "¡Bienvenido/a, ${personaje.nombre}! Como un valiente ${personaje.raza} ${personaje.clase}, te aventuras en un mundo lleno de misterio y peligros. Te encuentras en una encrucijada en el bosque, y el aire está cargado de magia antigua. A tu izquierda, un sendero oscuro se adentra en el bosque profundo, donde los árboles parecen susurrar secretos. A la derecha, ves un camino iluminado que parece llevar a una aldea tranquila, aunque extraña. ¿Qué deseas hacer?",
+    "imagen": "./imgs/id1.webp",
+    "opciones": [
+      { "texto": "Tomar el camino de la izquierda", "siguiente": 2 },
+      { "texto": "Tomar el camino de la derecha", "siguiente": 3 }
+    ]
+  },
+  {
+    "id": 2,
+    "texto": "Te adentras en el sendero oscuro y sientes que el aire se vuelve más frío. Después de unos minutos, llegas a una cueva sombría. Dentro, encuentras un misterioso artefacto brillante en el suelo, rodeado de sombras que parecen moverse. Te sientes observado. ¿Qué haces?",
+    "imagen": "./imgs/id2.webp",
+    "opciones": [
+      { "texto": "Investigar el artefacto", "siguiente": 4 },
+      { "texto": "Salir de la cueva rápidamente", "siguiente": 5 }
+    ]
+  },
+  {
+    "id": 3,
+    "texto": "Sigues el camino iluminado y te encuentras con un anciano sabio que está sentado en un banco. Su mirada es profunda y enigmática. Te advierte sobre las fuerzas oscuras que acechan en el bosque y que el camino que tomes puede tener consecuencias inimaginables. ¿Qué deseas hacer?",
+    "imagen": "./imgs/id3.webp",
+    "opciones": [
       {
-        "id": 18,
-        "texto": "Mientras caminas por un sendero apartado, escuchas un suave sollozo proveniente de un arbusto. Al acercarte, descubres a una joven elfa atrapada enredada en espinas mágicas que la inmovilizan. Te pide ayuda, diciendo que una maldición la está consumiendo. ¿La ayudas?",
-        "opciones": [
-            { "texto": "Ayudar a liberar a la elfa de las espinas", "siguiente": 19, "karma": "bueno" },
-            { "texto": "Ignorar a la elfa y seguir tu camino", "siguiente": 5, "karma": "malo" }
-        ]
-    },
-    {
-        "id": 19,
-        "texto": "Decides ayudar a la elfa y, al liberarla de las espinas mágicas, ella te agradece profundamente y te entrega una gema encantada que puede repeler a los espíritus malignos. Te cuenta sobre una fuente sagrada que concede deseos en el bosque. ¿Deseas acompañarla hasta allí o seguir tu camino?",
-        "opciones": [
-            { "texto": "Acompañar a la elfa a la fuente sagrada", "siguiente": 20, "karma": "bueno" },
-            { "texto": "Tomar la gema y continuar solo", "siguiente": 5 }
-        ]
-    },
-    {
-        "id": 20,
-        "texto": "Decides acompañar a la elfa. Durante el trayecto, ella te cuenta sobre su familia perdida en el bosque, quienes también buscaban la fuente. Al llegar, descubren que la fuente está protegida por un espíritu guardián que exige una prueba de bondad. ¿Deseas enfrentar la prueba o convencer al guardián de que los deje pasar?",
-        "opciones": [
-            { "texto": "Enfrentar la prueba de bondad", "siguiente": 21, "karma": "bueno" },
-            { "texto": "Tratar de convencer al guardián", "siguiente": 22 }
-        ]
-    },
-    {
-        "id": 21,
-        "texto": "Superas la prueba de bondad al demostrar compasión y empatía, lo cual permite que el guardián te conceda un deseo. Decides pedir la restauración de la familia de la elfa. En un destello de luz, su familia reaparece junto a la fuente, y ella, entre lágrimas, te agradece. Has ganado un aliado leal en el bosque.",
-        "opciones": []
-    },
-    {
-        "id": 22,
-        "texto": "Intentas convencer al guardián de que los deje pasar sin la prueba. Sin embargo, el guardián no confía en tus palabras y te rechaza. La elfa, decepcionada, decide ir sola. Continuas tu viaje, pero una sombra oscura parece seguirte, consecuencia de haber fallado en ayudar de corazón.",
-        "opciones": []
-    },
-    {
-        "id": 23,
-        "texto": "En tu camino, encuentras a un mercader herido, que apenas puede hablar. Te ruega que lo ayudes a llegar a su aldea cercana, ofreciendo una recompensa. Sin embargo, podrías también aprovechar la situación para tomar algunos de sus bienes. ¿Qué decides hacer?",
-        "opciones": [
-            { "texto": "Ayudar al mercader a llegar a la aldea", "siguiente": 24, "karma": "bueno" },
-            { "texto": "Robar algunos bienes del mercader y marcharte", "siguiente": 25, "karma": "malo" }
-        ]
-    },
-    {
-        "id": 24,
-        "texto": "Ayudas al mercader y lo llevas a salvo a la aldea, donde sus familiares te ofrecen una recompensa en monedas de oro. El mercader promete que te ayudará en el futuro si necesitas algo en el bosque. Te despides, sabiendo que ahora cuentas con un aliado más.",
-        "opciones": []
-    },
-    {
-        "id": 25,
-        "texto": "Robas algunos bienes del mercader y sigues tu camino. Sin embargo, pronto sientes un peso en tu consciencia. Más tarde en tu viaje, descubres que esos bienes estaban malditos, y una sombra te sigue, recordándote tus acciones.",
-        "opciones": []
-    },
-    {
-        "id": 26,
-        "texto": "Mientras exploras una zona sombría del bosque, encuentras a un niño perdido y asustado. Te pide que lo lleves de regreso a su hogar, pero sabes que guiarlo podría retrasar tu viaje. ¿Decides ayudarlo o dejarlo en busca de ayuda?",
-        "opciones": [
-            { "texto": "Llevar al niño a salvo hasta su hogar", "siguiente": 27, "karma": "bueno" },
-            { "texto": "Dejarlo en el bosque y seguir tu camino", "siguiente": 5, "karma": "malo" }
-        ]
-    },
-    {
-        "id": 27,
-        "texto": "Decides acompañar al niño, ayudándolo a superar sus miedos y llegar a salvo a su aldea. Los aldeanos te agradecen y te ofrecen un mapa secreto del bosque como recompensa. Con este mapa, tu camino será más seguro y estarás mejor preparado para futuros desafíos.",
-        "opciones": []
-    }
+        "texto": "Hablar con el anciano y escuchar su advertencia",
+        "siguiente": 6,
+        "karma": "bueno"
+      },
+      { "texto": "Ignorarlo y seguir caminando", "siguiente": 18 }
+    ]
+  },
+  {
+    "id": 4,
+    "texto": "Te acercas al artefacto y sientes una oleada de energía recorriendo tu cuerpo. Al tocarlo, vislumbras fragmentos de una historia oscura: un antiguo mal que fue encerrado y ahora amenaza con liberarse. De repente, el artefacto se activa y un susurro ecoa en tu mente, invitándote a liberar al ser atrapado. ¿Decides hacerlo?",
+    "imagen": "./imgs/id4.webp",
+    "opciones": [
+      { "texto": "Liberar al ser atrapado", "siguiente": 7 },
+      { "texto": "Dejar el artefacto y salir de la cueva", "siguiente": 5 }
+    ]
+  },
+  {
+    "id": 5,
+    "texto": "Decides dejar la cueva, sintiendo que algo oscuro acechaba en las sombras. Aunque has evitado el peligro inmediato, el bosque sigue lleno de misterios por descubrir. Regresas a la encrucijada, donde puedes tomar un nuevo camino. Sin embargo, al recordar las advertencias del anciano y lo que has visto, decides que es mejor regresar a la aldea. Al llegar, el aire fresco y la tranquilidad te dan la bienvenida, pero sabes que el bosque siempre estará ahí, lleno de secretos por desvelar. Tu aventura ha terminado, pero los ecos del bosque seguirán resonando en tu mente.",
+    "imagen": "./imgs/id5.webp",
+    "opciones": []
+  },
+  {
+    "id": 6,
+    "texto": "Decides escuchar al anciano. Te cuenta que el bosque está lleno de entidades que no deberían ser liberadas. Te advierte sobre un lugar donde los muertos vagan y que si sigues adelante sin la preparación adecuada, podrías perderte para siempre. Te ofrece un amuleto que podría protegerte. ¿Lo aceptas?",
+    "imagen": "./imgs/id6.avif",
+    "opciones": [
+      { "texto": "Aceptar el amuleto", "siguiente": 8, "karma": "bueno" },
+      { "texto": "Rechazar el amuleto y seguir tu camino", "siguiente": 5 }
+    ]
+  },
+  {
+    "id": 7,
+    "texto": "Liberas al ser atrapado. Un torrente de energía oscura inunda la cueva y el ser, una sombra de un antiguo enemigo, emerge ante ti. Su risa resuena en la oscuridad. Te ofrece un pacto que puede otorgarte poder, pero a un precio terrible. ¿Aceptas el pacto?",
+    "imagen": "./imgs/id7.jpg",
+    "opciones": [
+      { "texto": "Aceptar el pacto", "siguiente": 9 },
+      {
+        "texto": "Rechazar el pacto y luchar contra la sombra",
+        "siguiente": 10
+      }
+    ]
+  },
+  {
+    "id": 8,
+    "texto": "Con el amuleto en tu poder, te sientes más seguro. El anciano te despide con una advertencia: 'No todos los caminos conducen a la salvación'. Agradeces al anciano y continúas tu camino. Pronto te enfrentas a un cruce nuevamente. Uno de los caminos lleva a una niebla densa, el otro a un puente que parece inestable. ¿Cuál eliges?",
+    "imagen": "./imgs/id8.jpg",
+    "opciones": [
+      { "texto": "Tomar el camino de la niebla", "siguiente": 11 },
+      { "texto": "Cruzar el puente inestable", "siguiente": 12 }
+    ]
+  },
+  {
+    "id": 9,
+    "texto": "El poder del pacto fluye a través de ti, pero sientes cómo tu humanidad se desmorona. Ahora, como un sirviente de la oscuridad, debes cumplir con las órdenes del ser liberado. Sin embargo, con el poder viene la locura. Te conviertes en un cazador de almas, atrapando a otros en el bosque. Aunque has ganado poder, has perdido tu libertad y tu esencia. La sombra siempre estará acechando.",
+    "imagen": "./imgs/id9.avif",
+    "opciones": []
+  },
+  {
+    "id": 10,
+    "texto": "Decides luchar contra la sombra. A pesar de que el ser es formidable, usas toda tu fuerza y el amuleto para enfrentarte a él. Después de una intensa batalla, logras desterrarlo de vuelta a la oscuridad. Sintiéndote victorioso, decides proteger el bosque de futuros peligros. Como nuevo guardián del bosque, tu aventura apenas comienza.",
+    "imagen": "./imgs/id10.jpg",
+    "opciones": []
+  },
+  {
+    "id": 11,
+    "texto": "El camino de la niebla es frío y siniestro. A medida que avanzas, una figura se materializa frente a ti: un espectro que parece buscar venganza. Con su mano fría, te toca y sientes cómo tus recuerdos se desvanecen. ¿Qué harás?",
+    "imagen": "./imgs/id11.avif",
+    "opciones": [
+      { "texto": "Enfrentar al espectro", "siguiente": 13 },
+      { "texto": "Intentar escapar", "siguiente": 14 }
+    ]
+  },
+  {
+    "id": 12,
+    "texto": "Al cruzar el puente inestable, este comienza a romperse. En un último esfuerzo, te lanzas al otro lado justo a tiempo. Aterrizas en un claro donde una antigua estatua de piedra te observa. ¿Qué decides hacer?",
+    "imagen": "./imgs/id12.avif",
+    "opciones": [
+      { "texto": "Examinar la estatua", "siguiente": 15, "karma": "bueno" },
+      { "texto": "Ignorarla y seguir adelante", "siguiente": 5 }
+    ]
+  },
+  {
+    "id": 13,
+    "texto": "Enfrentas al espectro con valentía. La lucha es feroz, pero tu determinación brilla. Usas el amuleto para sellar el espectro en un ciclo de luz y sombra. Has ganado una batalla, pero la guerra en el bosque apenas comienza. Te das cuenta de que siempre habrá nuevos desafíos y secretos en la oscuridad del bosque. Te conviertes en un héroe del bosque, listo para enfrentar lo que venga.",
+    "imagen": "./imgs/id13.webp",
+    "opciones": []
+  },
+  {
+    "id": 14,
+    "texto": "Intentas escapar del espectro, pero se mueve más rápido. Al girar una esquina, caes en un abismo de sombras y quedas atrapado para siempre. Aunque tu viaje termina aquí, tu historia será recordada por aquellos que se aventuran a entrar en el bosque.",
+    "imagen": "./imgs/id14bis.webp",
+    "opciones": []
+  },
+  {
+    "id": 15,
+    "texto": "La estatua parece cobrar vida por un instante, revelando un antiguo secreto sobre el bosque. Te dice que hay una salida, pero solo si demuestras tu valía enfrentando una prueba. ¿Estás listo para el desafío?",
+    "imagen": "./imgs/id15.jpg",
+    "opciones": [
+      { "texto": "Aceptar el desafío", "siguiente": 16 },
+      { "texto": "Rechazar el desafío y huir", "siguiente": 5 }
+    ]
+  },
+  {
+    "id": 16,
+    "texto": "Te enfrentas a la prueba. Respondes a tres acertijos que ponen a prueba tu sabiduría y valentía. Después de superar cada uno, la estatua te concede un regalo: un artefacto que puede abrir una puerta a un lugar seguro. Ahora, ¿qué harás?",
+    "imagen": "./imgs/id16.webp",
+    "opciones": [
+      { "texto": "Usar el artefacto para salir del bosque", "siguiente": 17 },
+      { "texto": "Quedarte un poco más y explorar", "siguiente": 23 }
+    ]
+  },
+  {
+    "id": 17,
+    "texto": "Usas el artefacto y sientes cómo una luz te envuelve. De repente, te encuentras de nuevo en un lugar seguro fuera del bosque, habiendo superado la prueba y aprendido valiosas lecciones. Ahora, con un nuevo sentido de propósito, decides qué camino tomar en tu vida. Tu aventura ha sido un viaje de crecimiento y descubrimiento.",
+    "imagen": "./imgs/id17.webp",
+    "opciones": []
+  },
+  {
+    "id": 18,
+    "texto": "Mientras caminas por un sendero apartado, escuchas un suave sollozo proveniente de un arbusto. Al acercarte, descubres a una joven elfa atrapada enredada en espinas mágicas que la inmovilizan. Te pide ayuda, diciendo que una maldición la está consumiendo. ¿La ayudas?",
+    "imagen": "./imgs/id18.webp",
+    "opciones": [
+      {
+        "texto": "Ayudar a liberar a la elfa de las espinas",
+        "siguiente": 19,
+        "karma": "bueno"
+      },
+      {
+        "texto": "Ignorar a la elfa y seguir tu camino",
+        "siguiente": 5,
+        "karma": "malo"
+      }
+    ]
+  },
+  {
+    "id": 19,
+    "texto": "Decides ayudar a la elfa y, al liberarla de las espinas mágicas, ella te agradece profundamente y te entrega una gema encantada que puede repeler a los espíritus malignos. Te cuenta sobre una fuente sagrada que concede deseos en el bosque. ¿Deseas acompañarla hasta allí o seguir tu camino?",
+    "imagen": "./imgs/id19.jpg",
+    "opciones": [
+      {
+        "texto": "Acompañar a la elfa a la fuente sagrada",
+        "siguiente": 20,
+        "karma": "bueno"
+      },
+      { "texto": "Tomar la gema y continuar solo", "siguiente": 5 }
+    ]
+  },
+  {
+    "id": 20,
+    "texto": "Decides acompañar a la elfa. Durante el trayecto, ella te cuenta sobre su familia perdida en el bosque, quienes también buscaban la fuente. Al llegar, descubren que la fuente está protegida por un espíritu guardián que exige una prueba de bondad. ¿Deseas enfrentar la prueba o convencer al guardián de que los deje pasar?",
+    "imagen": "./imgs/id20.webp",
+    "opciones": [
+      {
+        "texto": "Enfrentar la prueba de bondad",
+        "siguiente": 21,
+        "karma": "bueno"
+      },
+      { "texto": "Tratar de convencer al guardián", "siguiente": 22 }
+    ]
+  },
+  {
+    "id": 21,
+    "texto": "Superas la prueba de bondad al demostrar compasión y empatía, lo cual permite que el guardián te conceda un deseo. Decides pedir la restauración de la familia de la elfa. En un destello de luz, su familia reaparece junto a la fuente, y ella, entre lágrimas, te agradece. Has ganado un aliado leal en el bosque.",
+    "imagen": "./imgs/id21.webp",
+    "opciones": []
+  },
+  {
+    "id": 22,
+    "texto": "Intentas convencer al guardián de que los deje pasar sin la prueba. Sin embargo, el guardián no confía en tus palabras y te rechaza. La elfa, decepcionada, decide ir sola. Continuas tu viaje, pero una sombra oscura parece seguirte, consecuencia de haber fallado en ayudar de corazón.",
+    "imagen": "./imgs/id22.webp",
+    "opciones": []
+  },
+  {
+    "id": 23,
+    "texto": "En tu camino, encuentras a un mercader herido, que apenas puede hablar. Te ruega que lo ayudes a llegar a su aldea cercana, ofreciendo una recompensa. Sin embargo, podrías también aprovechar la situación para tomar algunos de sus bienes. ¿Qué decides hacer?",
+   "imagen": "./imgs/id23.webp",
+    "opciones": [
+      {
+        "texto": "Ayudar al mercader a llegar a la aldea",
+        "siguiente": 24,
+        "karma": "bueno"
+      },
+      {
+        "texto": "Robar algunos bienes del mercader y marcharte",
+        "siguiente": 25,
+        "karma": "malo"
+      }
+    ]
+  },
+  {
+    "id": 24,
+    "texto": "Ayudas al mercader y lo llevas a salvo a la aldea, donde sus familiares te ofrecen una recompensa en monedas de oro. El mercader promete que te ayudará en el futuro si necesitas algo en el bosque. Te despides, sabiendo que ahora cuentas con un aliado más.",
+    "imagen": "./imgs/id24.webp",
+    "opciones": []
+  },
+  {
+    "id": 25,
+    "texto": "Robas algunos bienes del mercader y sigues tu camino. Sin embargo, pronto sientes un peso en tu consciencia. Más tarde en tu viaje, descubres que esos bienes estaban malditos, y una sombra te sigue, recordándote tus acciones.",
+    "imagen": "./imgs/id25.jpg",
+    "opciones": []
+  },
+  {
+    "id": 26,
+    "texto": "Mientras exploras una zona sombría del bosque, encuentras a un niño perdido y asustado. Te pide que lo lleves de regreso a su hogar, pero sabes que guiarlo podría retrasar tu viaje. ¿Decides ayudarlo o dejarlo en busca de ayuda?",
+    "imagen": "./imgs/id26.jpg",
+    "opciones": [
+      {
+        "texto": "Llevar al niño a salvo hasta su hogar",
+        "siguiente": 27,
+        "karma": "bueno"
+      },
+      {
+        "texto": "Dejarlo en el bosque y seguir tu camino",
+        "siguiente": 5,
+        "karma": "malo"
+      }
+    ]
+  },
+  {
+    "id": 27,
+    "texto": "Decides acompañar al niño, ayudándolo a superar sus miedos y llegar a salvo a su aldea. Los aldeanos te agradecen y te ofrecen un mapa secreto del bosque como recompensa. Con este mapa, tu camino será más seguro y estarás mejor preparado para futuros desafíos.",
+    "imagen": "./imgs/id27.jpg",
+    "opciones": []
+  }
 ]
