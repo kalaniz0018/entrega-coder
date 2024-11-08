@@ -27,7 +27,8 @@
         "siguiente": 6,
         "karma": "bueno"
       },
-      { "texto": "Ignorarlo y seguir caminando", "siguiente": 18 }
+      { "texto": "Ignorarlo y seguir caminando", "siguiente": 18 ,
+      "karma": "malo"}
     ]
   },
   {
@@ -35,7 +36,7 @@
     "texto": "Te acercas al artefacto y sientes una oleada de energía recorriendo tu cuerpo. Al tocarlo, vislumbras fragmentos de una historia oscura: un antiguo mal que fue encerrado y ahora amenaza con liberarse. De repente, el artefacto se activa y un susurro ecoa en tu mente, invitándote a liberar al ser atrapado. ¿Decides hacerlo?",
     "imagen": "./imgs/id4.webp",
     "opciones": [
-      { "texto": "Liberar al ser atrapado", "siguiente": 7 },
+      { "texto": "Liberar al ser atrapado", "siguiente": 7, "karma": "bueno" },
       { "texto": "Dejar el artefacto y salir de la cueva", "siguiente": 5 }
     ]
   },
@@ -51,7 +52,7 @@
     "imagen": "./imgs/id6.avif",
     "opciones": [
       { "texto": "Aceptar el amuleto", "siguiente": 8, "karma": "bueno" },
-      { "texto": "Rechazar el amuleto y seguir tu camino", "siguiente": 5 }
+      { "texto": "Rechazar el amuleto y seguir tu camino", "siguiente": 5, "karma": "malo" }
     ]
   },
   {
@@ -59,10 +60,10 @@
     "texto": "Liberas al ser atrapado. Un torrente de energía oscura inunda la cueva y el ser, una sombra de un antiguo enemigo, emerge ante ti. Su risa resuena en la oscuridad. Te ofrece un pacto que puede otorgarte poder, pero a un precio terrible. ¿Aceptas el pacto?",
     "imagen": "./imgs/id7.jpg",
     "opciones": [
-      { "texto": "Aceptar el pacto", "siguiente": 9 },
+      { "texto": "Aceptar el pacto", "siguiente": 9, "karma": "malo" },
       {
         "texto": "Rechazar el pacto y luchar contra la sombra",
-        "siguiente": 10
+        "siguiente": 10,  "karma": "bueno"
       }
     ]
   },
@@ -92,8 +93,8 @@
     "texto": "El camino de la niebla es frío y siniestro. A medida que avanzas, una figura se materializa frente a ti: un espectro que parece buscar venganza. Con su mano fría, te toca y sientes cómo tus recuerdos se desvanecen. ¿Qué harás?",
     "imagen": "./imgs/id11.avif",
     "opciones": [
-      { "texto": "Enfrentar al espectro", "siguiente": 13 },
-      { "texto": "Intentar escapar", "siguiente": 14 }
+      { "texto": "Enfrentar al espectro", "siguiente": 13 , "karma": "bueno" },
+      { "texto": "Intentar escapar", "siguiente": 14, "karma": "malo" }
     ]
   },
   {
@@ -122,8 +123,8 @@
     "texto": "La estatua parece cobrar vida por un instante, revelando un antiguo secreto sobre el bosque. Te dice que hay una salida, pero solo si demuestras tu valía enfrentando una prueba. ¿Estás listo para el desafío?",
     "imagen": "./imgs/id15.jpg",
     "opciones": [
-      { "texto": "Aceptar el desafío", "siguiente": 16 },
-      { "texto": "Rechazar el desafío y huir", "siguiente": 5 }
+      { "texto": "Aceptar el desafío", "siguiente": 16, "karma": "bueno" },
+      { "texto": "Rechazar el desafío y huir", "siguiente": 5, "karma": "malo" }
     ]
   },
   {

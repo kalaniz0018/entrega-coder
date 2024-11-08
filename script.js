@@ -21,11 +21,11 @@ class Personaje {
 
     obtenerFinal() {
         if (this.karma >= 3) {
-            return "Final Bueno: Eres considerado un héroe de la aldea";
+            return "Has logrado una puntuación que te posiciona como un ser de elevada integridad moral. ";
         } else if (this.karma < 1 && this.karma > 2) {
-            return "Terminas tu viaje... No lograste ni gloria, ni desgracia. Pasaste desapercibido, sin destacar. ";
+            return "Terminas tu viaje... No lograste ni gloria, ni desgracia. Pasaste desapercibido, sin destacar.";
         } else {
-            return "Final Malo: Te has ganado enemigos y eres exiliado";
+            return "Tu puntuación refleja una moralidad tan baja que te has convertido en una paria de la sociedad, rechazado y despreciado por todos.";
         }
     }
 }
