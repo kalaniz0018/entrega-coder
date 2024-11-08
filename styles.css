@@ -27,7 +27,9 @@ h1 {
     color: #e67e22;
 }
 
-input, select, button {
+input,
+select,
+button {
     width: 100%;
     margin: 10px 0;
     padding: 8px;
@@ -52,30 +54,61 @@ button:hover {
 }
 
 
-#volver-a-jugar-btn {
-    display: block;            /* Hacer que el botón sea un bloque */
-    margin: 20px auto;       /* Centrando el botón horizontalmente */
-    padding: 10px 20px;      /* Espaciado interno para un tamaño adecuado */
-    font-size: 16px;         /* Tamaño de fuente */
-    background-color: #007bff; /* Color de fondo */
-    color: white;            /* Color del texto */
-    border: none;            /* Sin borde */
-    border-radius: 5px;     /* Bordes redondeados */
-    cursor: pointer;         /* Cambiar el cursor al pasar sobre el botón */
-    text-align: center;      /* Alinear el texto al centro */
+#jugar-btn {
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    border-radius: 50px;
+    padding: 15px 30px;
+    font-size: 18px;
+    width: 100%;
+    max-width: 350px;
+    margin: 20px auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
 }
 
-/* Añadir un efecto al pasar el mouse sobre el botón */
+
+#jugar-btn:hover {
+    background-color: #d35400;
+    transform: scale(1.05);
+}
+
+
+#jugar-btn:focus {
+    outline: none;
+    box-shadow: 0 0 10px rgba(230, 126, 34, 0.6);
+}
+
+
+
+
+
+#volver-a-jugar-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+
 #volver-a-jugar-btn:hover {
-    background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+    background-color: #0056b3;
 }
 
 
 
 
 #historia-container img {
-    width: 300px;   /* Establecer el ancho fijo de 50px */
-    height: 300px;  /* Establecer la altura fija de 50px */
-    display: block; /* Asegura que la imagen se muestre correctamente */
-    margin: 0 auto;  /* Centra la imagen */
+    width: 300px;
+    height: 300px;
+    display: block;
+    margin: 0 auto;
 }
