@@ -1,6 +1,4 @@
-
 localStorage.clear();
-
 
 class Personaje {
     constructor(nombre, raza, clase) {
@@ -52,7 +50,7 @@ volverAJugarBtn.style.display = "none";
 const historiaContainer = document.getElementById("historia-container");
 historiaContainer.appendChild(volverAJugarBtn);
 
-// Función para cargar las historias desde el JSON utilizando fetch
+
 async function cargarHistorias() {
     try {
         const response = await fetch("historias.json");
@@ -62,7 +60,7 @@ async function cargarHistorias() {
         console.error("Error al cargar historias:", error);
     }
 }
-// Llamada a cargar las historias
+
 cargarHistorias();
 
 
@@ -191,6 +189,8 @@ function mostrarHistoria(id) {
             const imagenElement = document.createElement("img");
             imagenElement.src = historia.imagen;
             textoHistoria.appendChild(imagenElement);
+             // Guardar el estado actual de la historia y la imagen
+             localStorage.setItem("estadoHistoria", JSON.stringify({ id: historia.id, imagen: historia.imagen }));
         }
 
 
@@ -223,6 +223,13 @@ function cargarPersonaje() {
         jugarBtn.style.display = "none";
         mostrarHistoria(1); o
     }
+
+    // Cargar el estado de la historia (si está guardado)
+    const estadoHistoria = JSON.parse(localStorage.getItem("estadoHistoria"));
+    if (estadoHistoria) {
+        mostrarHistoria(estadoHistoria.id);
+    }
+
 }
 
 
