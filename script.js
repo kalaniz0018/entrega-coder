@@ -1,4 +1,4 @@
-localStorage.clear();
+//localStorage.clear();
 
 class Personaje {
     constructor(nombre, raza, clase) {
@@ -20,7 +20,6 @@ class Personaje {
         localStorage.setItem("personaje", JSON.stringify(this));
     }
 
-
     obtenerFinal() {
         if (this.karma >= 3) {
             return "Has logrado una puntuación que te posiciona como un ser de elevada integridad moral.";
@@ -32,10 +31,8 @@ class Personaje {
     }
 }
 
-
 let personaje = null;
 let historias = [];
-
 
 const jugarBtn = document.getElementById("jugar-btn");
 const textoHistoria = document.getElementById("texto-historia");
@@ -46,10 +43,8 @@ volverAJugarBtn.id = "volver-a-jugar-btn";
 volverAJugarBtn.innerText = "Volver a Jugar";
 volverAJugarBtn.style.display = "none";
 
-
 const historiaContainer = document.getElementById("historia-container");
 historiaContainer.appendChild(volverAJugarBtn);
-
 
 async function cargarHistorias() {
     try {
@@ -63,7 +58,6 @@ async function cargarHistorias() {
 
 cargarHistorias();
 
-
 jugarBtn.addEventListener("click", () => {
     const titulo = document.querySelector("h1");
     const imagen = document.querySelector("img");
@@ -75,7 +69,6 @@ jugarBtn.addEventListener("click", () => {
     if (imagen) {
         imagen.style.display = "none";
     }
-
 
     Swal.fire({
         title: 'Crea tu personaje',
@@ -108,10 +101,6 @@ jugarBtn.addEventListener("click", () => {
         }
     });
 });
-
-
-
-
 
 function mostrarBotonVolverAJugar() {
     volverAJugarBtn.style.display = "block";
@@ -126,7 +115,6 @@ volverAJugarBtn.addEventListener("click", () => {
     opcionesContainer.innerHTML = "";
     volverAJugarBtn.style.display = "none";
 
-
     Swal.fire({
         title: 'Crea tu personaje',
         html:
@@ -161,7 +149,6 @@ volverAJugarBtn.addEventListener("click", () => {
     });
 });
 
-
 function finDeLaHistoria() {
     const final = personaje.obtenerFinal();
 
@@ -171,7 +158,6 @@ function finDeLaHistoria() {
     textoHistoria.appendChild(finalContainer);
     mostrarBotonVolverAJugar();
 }
-
 
 function mostrarHistoria(id) {
     const historia = historias.find((item) => item.id === id);
@@ -189,10 +175,9 @@ function mostrarHistoria(id) {
             const imagenElement = document.createElement("img");
             imagenElement.src = historia.imagen;
             textoHistoria.appendChild(imagenElement);
-             // Guardar el estado actual de la historia y la imagen
-             localStorage.setItem("estadoHistoria", JSON.stringify({ id: historia.id, imagen: historia.imagen }));
+            // Guardar el estado actual de la historia y la imagen
+            localStorage.setItem("estadoHistoria", JSON.stringify({ id: historia.id, imagen: historia.imagen }));
         }
-
 
         opcionesContainer.innerHTML = "";
         historia.opciones.forEach((opcion) => {
@@ -205,14 +190,11 @@ function mostrarHistoria(id) {
             });
             opcionesContainer.appendChild(botonOpcion);
         });
-
-
         if (historia.opciones.length === 0) {
             finDeLaHistoria();
         }
     }
 }
-
 
 function cargarPersonaje() {
     const personajeGuardado = JSON.parse(localStorage.getItem("personaje"));
@@ -229,8 +211,6 @@ function cargarPersonaje() {
     if (estadoHistoria) {
         mostrarHistoria(estadoHistoria.id);
     }
-
 }
-
 
 cargarPersonaje();
