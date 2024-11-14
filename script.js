@@ -4,21 +4,21 @@ localStorage.clear();
 
 class Personaje {
     constructor(nombre, raza, clase) {
-      
+
         this.nombre = nombre;
         this.raza = raza;
         this.clase = clase;
-        this.karma = 0; 
+        this.karma = 0;
     }
 
 
     ajustarKarma(valor) {
         if (valor === "bueno") {
-            this.karma += 1; 
+            this.karma += 1;
         } else if (valor === "malo") {
-            this.karma -= 1; 
+            this.karma -= 1;
         }
-  
+
         localStorage.setItem("personaje", JSON.stringify(this));
     }
 
@@ -35,18 +35,18 @@ class Personaje {
 }
 
 
-let personaje = null;  
-let historias = []; 
+let personaje = null;
+let historias = [];
 
 
-const jugarBtn = document.getElementById("jugar-btn");  
-const textoHistoria = document.getElementById("texto-historia"); 
-const opcionesContainer = document.getElementById("opciones");  
+const jugarBtn = document.getElementById("jugar-btn");
+const textoHistoria = document.getElementById("texto-historia");
+const opcionesContainer = document.getElementById("opciones");
 
 const volverAJugarBtn = document.createElement("button");
 volverAJugarBtn.id = "volver-a-jugar-btn";
 volverAJugarBtn.innerText = "Volver a Jugar";
-volverAJugarBtn.style.display = "none";  
+volverAJugarBtn.style.display = "none";
 
 
 const historiaContainer = document.getElementById("historia-container");
@@ -67,10 +67,10 @@ cargarHistorias();
 
 
 jugarBtn.addEventListener("click", () => {
-    const titulo = document.querySelector("h1");  
-    const imagen = document.querySelector("img");  
+    const titulo = document.querySelector("h1");
+    const imagen = document.querySelector("img");
 
-   
+
     if (titulo) {
         titulo.style.display = "none";
     }
@@ -78,7 +78,7 @@ jugarBtn.addEventListener("click", () => {
         imagen.style.display = "none";
     }
 
-   
+
     Swal.fire({
         title: 'Crea tu personaje',
         html:
@@ -95,10 +95,10 @@ jugarBtn.addEventListener("click", () => {
             '</select>',
         focusConfirm: false,
         preConfirm: () => {
-            const nombre = Swal.getPopup().querySelector('#nombre').value || "Aventurero"; 
-            const raza = Swal.getPopup().querySelector('#raza').value;  
-            const clase = Swal.getPopup().querySelector('#clase').value;  
-            return { nombre, raza, clase }; 
+            const nombre = Swal.getPopup().querySelector('#nombre').value || "Aventurero";
+            const raza = Swal.getPopup().querySelector('#raza').value;
+            const clase = Swal.getPopup().querySelector('#clase').value;
+            return { nombre, raza, clase };
         }
     }).then((result) => {
         if (result.isConfirmed) {
@@ -106,7 +106,7 @@ jugarBtn.addEventListener("click", () => {
             localStorage.setItem("personaje", JSON.stringify(personaje));
 
             jugarBtn.style.display = "none";
-            mostrarHistoria(1);  
+            mostrarHistoria(1);
         }
     });
 });
@@ -122,13 +122,13 @@ function mostrarBotonVolverAJugar() {
 volverAJugarBtn.addEventListener("click", () => {
 
     localStorage.removeItem("personaje");
-  
-    jugarBtn.style.display = "block";
-    textoHistoria.style.display = "none"; 
-    opcionesContainer.innerHTML = ""; 
-    volverAJugarBtn.style.display = "none"; 
 
-    
+    jugarBtn.style.display = "block";
+    textoHistoria.style.display = "none";
+    opcionesContainer.innerHTML = "";
+    volverAJugarBtn.style.display = "none";
+
+
     Swal.fire({
         title: 'Crea tu personaje',
         html:
@@ -145,10 +145,10 @@ volverAJugarBtn.addEventListener("click", () => {
             '</select>',
         focusConfirm: false,
         preConfirm: () => {
-            const nombre = Swal.getPopup().querySelector('#nombre').value || "Aventurero"; 
-            const raza = Swal.getPopup().querySelector('#raza').value; 
-            const clase = Swal.getPopup().querySelector('#clase').value; 
-            return { nombre, raza, clase };  
+            const nombre = Swal.getPopup().querySelector('#nombre').value || "Aventurero";
+            const raza = Swal.getPopup().querySelector('#raza').value;
+            const clase = Swal.getPopup().querySelector('#clase').value;
+            return { nombre, raza, clase };
         }
     }).then((result) => {
         if (result.isConfirmed) {
@@ -158,52 +158,52 @@ volverAJugarBtn.addEventListener("click", () => {
 
 
             jugarBtn.style.display = "none";
-            mostrarHistoria(1);  
+            mostrarHistoria(1);
         }
     });
 });
 
 
 function finDeLaHistoria() {
-    const final = personaje.obtenerFinal(); 
+    const final = personaje.obtenerFinal();
 
     const finalContainer = document.createElement("div");
     finalContainer.classList.add("final-container");
     finalContainer.innerHTML = `<p><strong>Fin de la Aventura</strong></p><p>${final}</p>`;
-    textoHistoria.appendChild(finalContainer);  
-    mostrarBotonVolverAJugar();  
+    textoHistoria.appendChild(finalContainer);
+    mostrarBotonVolverAJugar();
 }
 
 
 function mostrarHistoria(id) {
-    const historia = historias.find((item) => item.id === id); 
+    const historia = historias.find((item) => item.id === id);
 
     if (historia) {
         let textoConDatos = historia.texto
             .replaceAll("${personaje.nombre}", personaje.nombre)
             .replaceAll("${personaje.raza}", personaje.raza)
             .replaceAll("${personaje.clase}", personaje.clase);
-        
+
         textoHistoria.style.display = "block";
         textoHistoria.innerText = textoConDatos;
-     
+
         if (historia.imagen) {
             const imagenElement = document.createElement("img");
             imagenElement.src = historia.imagen;
             textoHistoria.appendChild(imagenElement);
         }
 
-  
+
         opcionesContainer.innerHTML = "";
         historia.opciones.forEach((opcion) => {
             const botonOpcion = document.createElement("button");
             botonOpcion.classList.add("opcion");
             botonOpcion.textContent = opcion.texto;
             botonOpcion.addEventListener("click", () => {
-                personaje.ajustarKarma(opcion.karma || 0);  
-                mostrarHistoria(opcion.siguiente);  
+                personaje.ajustarKarma(opcion.karma || 0);
+                mostrarHistoria(opcion.siguiente);
             });
-            opcionesContainer.appendChild(botonOpcion);  
+            opcionesContainer.appendChild(botonOpcion);
         });
 
 
@@ -215,11 +215,11 @@ function mostrarHistoria(id) {
 
 
 function cargarPersonaje() {
-    const personajeGuardado = JSON.parse(localStorage.getItem("personaje"));  
+    const personajeGuardado = JSON.parse(localStorage.getItem("personaje"));
     if (personajeGuardado) {
         personaje = new Personaje(personajeGuardado.nombre, personajeGuardado.raza, personajeGuardado.clase);
-        personaje.karma = personajeGuardado.karma; 
-  
+        personaje.karma = personajeGuardado.karma;
+
         jugarBtn.style.display = "none";
         mostrarHistoria(1); o
     }
