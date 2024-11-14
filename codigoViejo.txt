@@ -43,27 +43,20 @@ const jugarBtn = document.getElementById("jugar-btn");
 const textoHistoria = document.getElementById("texto-historia"); 
 const opcionesContainer = document.getElementById("opciones");  
 
-const volverAJugarBtn = document.createElement("button");
-volverAJugarBtn.id = "volver-a-jugar-btn";
-volverAJugarBtn.innerText = "Volver a Jugar";
-volverAJugarBtn.style.display = "none";  
 
-
-const historiaContainer = document.getElementById("historia-container");
-historiaContainer.appendChild(volverAJugarBtn);
-
-// Función para cargar las historias desde el JSON utilizando fetch
-async function cargarHistorias() {
-    try {
-        const response = await fetch("historias.json");
-        historias = await response.json();
-        console.log("Historias cargadas correctamente.");
-    } catch (error) {
-        console.error("Error al cargar historias:", error);
-    }
+/* if (jugarBtn) {
+    console.log("Botón 'Jugar' encontrado en el DOM.");
+} else {
+    console.error("Botón 'Jugar' no encontrado. Revisa el HTML.");
 }
-// Llamada a cargar las historias
-cargarHistorias();
+ */
+
+fetch("historias.json")
+    .then(response => response.json())  
+    .then(data => {
+        historias = data;  
+    })
+    .catch(error => console.error("Error al cargar historias:", error));  
 
 
 jugarBtn.addEventListener("click", () => {
@@ -112,7 +105,14 @@ jugarBtn.addEventListener("click", () => {
 });
 
 
+const volverAJugarBtn = document.createElement("button");
+volverAJugarBtn.id = "volver-a-jugar-btn";
+volverAJugarBtn.innerText = "Volver a Jugar";
+volverAJugarBtn.style.display = "none";  
 
+
+const historiaContainer = document.getElementById("historia-container");
+historiaContainer.appendChild(volverAJugarBtn);
 
 
 function mostrarBotonVolverAJugar() {
@@ -120,8 +120,9 @@ function mostrarBotonVolverAJugar() {
 }
 
 volverAJugarBtn.addEventListener("click", () => {
-
+ 
     localStorage.removeItem("personaje");
+
   
     jugarBtn.style.display = "block";
     textoHistoria.style.display = "none"; 
@@ -179,13 +180,16 @@ function mostrarHistoria(id) {
     const historia = historias.find((item) => item.id === id); 
 
     if (historia) {
+       
         let textoConDatos = historia.texto
             .replaceAll("${personaje.nombre}", personaje.nombre)
             .replaceAll("${personaje.raza}", personaje.raza)
             .replaceAll("${personaje.clase}", personaje.clase);
+
         
         textoHistoria.style.display = "block";
         textoHistoria.innerText = textoConDatos;
+
      
         if (historia.imagen) {
             const imagenElement = document.createElement("img");
