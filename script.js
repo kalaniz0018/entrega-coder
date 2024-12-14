@@ -163,6 +163,18 @@ function finDeLaHistoria() {
 }
 
 function mostrarHistoria(id) {
+    if (historias.length === 0) {
+        console.log("No se han cargado las historias.");
+        cargarHistorias().then(() => {
+            console.log("Historias cargadas correctamente.");
+            procesarHistoria(id);
+        });
+        return;
+    }
+    procesarHistoria(id);
+}
+
+function procesarHistoria(id) {
     const historia = historias.find((item) => item.id === id);
 
     if (historia) {
@@ -207,13 +219,23 @@ function cargarPersonajeYEstado() {
     // Cargar el personaje guardado
     const personajeGuardado = JSON.parse(localStorage.getItem("personaje"));
     if (personajeGuardado) {
+
         console.log("Personaje guardado encontrado:", personajeGuardado);
         personaje = new Personaje(personajeGuardado.nombre, personajeGuardado.raza, personajeGuardado.clase);
         personaje.karma = personajeGuardado.karma;
 
-        // Ocultar el botón de jugar
+        // Borrar pantalla de inicio
+        const titulo = document.querySelector("h1");
+        const imagen = document.querySelector("img");
         jugarBtn.style.display = "none";
-        
+
+        if (titulo) {
+            titulo.style.display = "none";
+        }
+        if (imagen) {
+            imagen.style.display = "none";
+        }
+
         // Cargar el estado de la historia (si está guardado)
         const estadoHistoria = JSON.parse(localStorage.getItem("estadoHistoria"));
         if (estadoHistoria) {
@@ -233,27 +255,28 @@ function cargarPersonajeYEstado() {
 // Cuando la página se carga, intenta recuperar la información del localStorage
 document.addEventListener('DOMContentLoaded', () => {
     cargarPersonajeYEstado();  // Cargar personaje y estado de la historia guardados
+    //cargarPersonaje();
 });
 
 
- function cargarPersonaje() {
+function cargarPersonaje() {
     const personajeGuardado = JSON.parse(localStorage.getItem("personaje"));
     if (personajeGuardado) {
         personaje = new Personaje(personajeGuardado.nombre, personajeGuardado.raza, personajeGuardado.clase);
         personaje.karma = personajeGuardado.karma;
 
         jugarBtn.style.display = "none";
-        mostrarHistoria(1); 
+        //mostrarHistoria(1);
     }
 
     // Cargar el estado de la historia (si está guardado)
-    const estadoHistoria = JSON.parse(localStorage.getItem("estadoHistoria"));
-    if (estadoHistoria) {
-        mostrarHistoria(estadoHistoria.id);
-    }
+    //const estadoHistoria = JSON.parse(localStorage.getItem("estadoHistoria"));
+    //if (estadoHistoria) {
+    //    mostrarHistoria(estadoHistoria.id);
+    //}
 }
- 
 
 
 
-cargarPersonaje();
+
+
