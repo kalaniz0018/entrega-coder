@@ -1,5 +1,3 @@
-//localStorage.clear();
-
 class Personaje {
     constructor(nombre, raza, clase) {
         this.nombre = nombre;
@@ -17,7 +15,6 @@ class Personaje {
 
         localStorage.setItem("personaje", JSON.stringify(this));
     }
-
     obtenerFinal() {
         if (this.karma >= 3) {
             return "Has logrado una puntuación que te posiciona como un ser de elevada integridad moral.";
@@ -35,7 +32,6 @@ let historias = [];
 const jugarBtn = document.getElementById("jugar-btn");
 const textoHistoria = document.getElementById("texto-historia");
 const opcionesContainer = document.getElementById("opciones");
-
 const volverAJugarBtn = document.createElement("button");
 volverAJugarBtn.id = "volver-a-jugar-btn";
 volverAJugarBtn.innerText = "Volver a Jugar";
@@ -48,7 +44,6 @@ async function cargarHistorias() {
     try {
         const response = await fetch("historias.json");
         historias = await response.json();
-        console.log("Historias cargadas correctamente.");
     } catch (error) {
         console.error("Error al cargar historias:", error);
     }
@@ -59,8 +54,6 @@ cargarHistorias();
 jugarBtn.addEventListener("click", () => {
     const titulo = document.querySelector("h1");
     const imagen = document.querySelector("img");
-
-
     if (titulo) {
         titulo.style.display = "none";
     }
@@ -104,11 +97,8 @@ jugarBtn.addEventListener("click", () => {
 function mostrarBotonVolverAJugar() {
     volverAJugarBtn.style.display = "block";
 }
-
 volverAJugarBtn.addEventListener("click", () => {
-
     localStorage.removeItem("personaje");
-
     jugarBtn.style.display = "block";
     textoHistoria.style.display = "none";
     opcionesContainer.innerHTML = "";
@@ -140,17 +130,11 @@ volverAJugarBtn.addEventListener("click", () => {
 
             personaje = new Personaje(result.value.nombre, result.value.raza, result.value.clase);
             localStorage.setItem("personaje", JSON.stringify(personaje));
-
-
             jugarBtn.style.display = "none";
             mostrarHistoria(1);
         }
     });
 });
-
-
-
-
 
 function finDeLaHistoria() {
     const final = personaje.obtenerFinal();
@@ -164,9 +148,7 @@ function finDeLaHistoria() {
 
 function mostrarHistoria(id) {
     if (historias.length === 0) {
-        console.log("No se han cargado las historias.");
         cargarHistorias().then(() => {
-            console.log("Historias cargadas correctamente.");
             procesarHistoria(id);
         });
         return;
@@ -190,7 +172,6 @@ function procesarHistoria(id) {
             const imagenElement = document.createElement("img");
             imagenElement.src = historia.imagen;
             textoHistoria.appendChild(imagenElement);
-            // Guardar el estado actual de la historia y la imagen
             localStorage.setItem("estadoHistoria", JSON.stringify({ id: historia.id, imagen: historia.imagen }));
         }
 
@@ -211,24 +192,15 @@ function procesarHistoria(id) {
     }
 }
 
-
-// Función que carga el personaje y el estado de la historia desde el localStorage
 function cargarPersonajeYEstado() {
-    console.log("Cargando personaje y estado...");
 
-    // Cargar el personaje guardado
     const personajeGuardado = JSON.parse(localStorage.getItem("personaje"));
     if (personajeGuardado) {
-
-        console.log("Personaje guardado encontrado:", personajeGuardado);
         personaje = new Personaje(personajeGuardado.nombre, personajeGuardado.raza, personajeGuardado.clase);
         personaje.karma = personajeGuardado.karma;
-
-        // Borrar pantalla de inicio
         const titulo = document.querySelector("h1");
         const imagen = document.querySelector("img");
         jugarBtn.style.display = "none";
-
         if (titulo) {
             titulo.style.display = "none";
         }
@@ -236,29 +208,20 @@ function cargarPersonajeYEstado() {
             imagen.style.display = "none";
         }
 
-        // Cargar el estado de la historia (si está guardado)
+
         const estadoHistoria = JSON.parse(localStorage.getItem("estadoHistoria"));
         if (estadoHistoria) {
-            console.log("Estado de la historia encontrado, continuando desde:", estadoHistoria.id);
-            mostrarHistoria(estadoHistoria.id);  // Continuar desde el estado guardado
+            mostrarHistoria(estadoHistoria.id);
         } else {
-            console.log("No hay estado de la historia guardado, comenzando desde el principio.");
-            mostrarHistoria(1); // Si no hay estado guardado, empezar desde el inicio
+            mostrarHistoria(1);
         }
     } else {
-        console.log("No se encontró personaje guardado.");
+        console.error("No se encontró personaje guardado.");
     }
 }
-
-
-
-// Cuando la página se carga, intenta recuperar la información del localStorage
 document.addEventListener('DOMContentLoaded', () => {
-    cargarPersonajeYEstado();  // Cargar personaje y estado de la historia guardados
-    //cargarPersonaje();
+    cargarPersonajeYEstado();
 });
-
-
 function cargarPersonaje() {
     const personajeGuardado = JSON.parse(localStorage.getItem("personaje"));
     if (personajeGuardado) {
@@ -266,14 +229,8 @@ function cargarPersonaje() {
         personaje.karma = personajeGuardado.karma;
 
         jugarBtn.style.display = "none";
-        //mostrarHistoria(1);
     }
 
-    // Cargar el estado de la historia (si está guardado)
-    //const estadoHistoria = JSON.parse(localStorage.getItem("estadoHistoria"));
-    //if (estadoHistoria) {
-    //    mostrarHistoria(estadoHistoria.id);
-    //}
 }
 
 
