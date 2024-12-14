@@ -91,7 +91,7 @@
   {
     "id": 11,
     "texto": "El camino de la niebla es frío y siniestro. A medida que avanzas, una figura se materializa frente a ti: un espectro que parece buscar venganza. Con su mano fría, te toca y sientes cómo tus recuerdos se desvanecen. ¿Qué harás?",
-    "imagen": "./imgs/id11.avif",
+    "imagen": "./imgs/id11.webp",
     "opciones": [
       { "texto": "Enfrentar al espectro", "siguiente": 13 , "karma": "bueno" },
       { "texto": "Intentar escapar", "siguiente": 14, "karma": "malo" }
